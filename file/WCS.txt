@@ -1,0 +1,37 @@
+服务名称：WCS_G_DEMO_YingXiang
+服务类型：WCS
+服务标题：WCS影像服务
+
+服务地址：http://218.75.137.28/ServiceAdapter/Map/WCS_G_DEMO_YingXiang
+令牌：21232f297a57a5a743894a0e4a801fc3
+调用方式:http://218.75.137.28/ServiceAdapter/Map/WCS_G_DEMO_YingXiang?tokens=21232f297a57a5a743894a0e4a801fc3
+
+服务描述
+Web覆盖服务（Web Coverage Service简称WCS）遵循OGC的WCS1.0.0规范。该服务面向空间影像数据，它将包含地理位置值的地理空间数据作为“覆盖（Coverage）”在网上相互交换。
+
+1 GetCapabilities操作
+返回描述服务和数据集的XML文档。
+参数说明：
+REQUEST  必选  请求的类型，值必须为GetCapabilities  
+调用方式：
+http://218.75.137.28/ServiceAdapter/Map/WCS_G_DEMO_YingXiang?request=GetCapabilities&service=WCS&BBOX=422008.250562,2523865.364673,426375.039183,2523865.364673&tokens=21232f297a57a5a743894a0e4a801fc3
+
+2 DescribeCoverage 操作
+允许用户终端请求由具体的WCS服务器提供的任一覆盖层的完全描述;
+调用方式：
+http://218.75.137.28/ServiceAdapter/Map/WCS_G_DEMO_YingXiang?service=wcs&version=1.1.0&REQUEST=DescribeCoverage&COVERAGE=jl&BBOX=422008.250562,2523865.364673,426375.039183,2523865.364673&tokens=21232f297a57a5a743894a0e4a801fc3
+
+3 GetCoverage操作
+本操作是在GetCapabilities确定什么样的查询可以执行、什么样的数据能够获取之后执行的，它使用通用的覆盖格式返回地理位置的值或属性，现在的返回支持geotiff格式。
+调用方式：
+http://218.75.137.28/ServiceAdapter/Map/WCS_G_DEMO_YingXiang?service=wcs&version=1.0.0&CRS=EPSG:4326&REQUEST=GetCoverage&COVERAGE=1&BBOX=113.24217842749734,22.812055771740109,113.28094568689878,22.830869240470456&WIDTH=250&HEIGHT=250&FORMAT=geotiff&tokens=21232f297a57a5a743894a0e4a801fc3
+
+
+
+
+
+
+
+
+
+

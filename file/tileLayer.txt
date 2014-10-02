@@ -1,0 +1,35 @@
+﻿dojo.require("esri.map");
+        dojo.declare("ESRITiledMapServiceLayer", esri.layers.TiledMapServiceLayer, {
+            constructor: function () {
+                this.spatialReference = new esri.SpatialReference(tileInfo.spatialReference);
+                this.initialExtent = new esri.geometry.Extent({
+                    xmin: tileInfo.initExtent.xmin,
+                    ymin: tileInfo.initExtent.ymin,
+                    xmax: tileInfo.initExtent.xmax,
+                    ymax: tileInfo.initExtent.ymax,
+                    spatialReference: this.spatialReference
+                });
+                this.fullExtent = new esri.geometry.Extent({
+                    xmin: tileInfo.fullExtent.xmin,
+                    ymin: tileInfo.fullExtent.ymin,
+                    xmax: tileInfo.fullExtent.xmax,
+                    ymax: tileInfo.fullExtent.ymax,
+                    spatialReference: this.spatialReference
+                });
+                this.tileInfo = new esri.layers.TileInfo(tileInfo);
+                this.loaded = true;
+                this.onLoad(this);
+            },
+            getTileUrl: function (level, row, col) {
+                var url = "";
+                tileUrl = DCIMapConfig.localVecMapUrl;
+                url = tileUrl + "?Service=WMTS&Request=GetTile&Version=1.0.0&Style=default&TileMatrixSet=sss" +
+                        "&Layer=0" +
+                        "&TileMatrix=" + level +
+                        "&tileRow=" + row +
+                        "&TileCol=" + col +
+                        "&format=image/png"+
+			            "&tokens=" + tokens;
+                return encodeURI(url);
+            }
+        });
