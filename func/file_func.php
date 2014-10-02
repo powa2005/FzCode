@@ -1,5 +1,7 @@
 <?php
 //Byte/Kb/MB/GB/TB/EB
+///将文件大小自动转换单位
+///$size：文件大小，单位为Byte
 function transByte($size){
 	$arr=array("B","KB","MB","GB","TB","EB");
 	$i=0;
