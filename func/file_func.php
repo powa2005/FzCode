@@ -12,4 +12,21 @@ function transByte($size){
 	}
 	return round($size,2).$arr[$i];//将结果保留两位小数，后面加上单位
 }
+
+function createFile($filename){
+	$pattern="/[\,\*,<>,\?,\|]";
+	if(!preg_match($pattern,basename($filename))){
+		if(!file_exists($filename)){
+			if(touch($filename)){
+				return "文件创建成功";
+			}else{
+				return "文件创建失败";
+			}
+		}else{
+			"文件已存在，请重新命名!";
+		}
+	}else{
+		return "非法文件名";
+	}
+}
 ?>
