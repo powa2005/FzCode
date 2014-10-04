@@ -14,7 +14,7 @@ function transByte($size){
 }
 
 function createFile($filename){
-	$pattern="/[\,\*,<>,\?,\|]";
+	$pattern="/[\/,\*,<>,\?,\|]/";  //"/[\/,\*,<>,\?\|]/"
 	if(!preg_match($pattern,basename($filename))){
 		if(!file_exists($filename)){
 			if(touch($filename)){
@@ -23,7 +23,7 @@ function createFile($filename){
 				return "文件创建失败";
 			}
 		}else{
-			"文件已存在，请重新命名!";
+			return "文件已存在，请重新命名!";
 		}
 	}else{
 		return "非法文件名";
