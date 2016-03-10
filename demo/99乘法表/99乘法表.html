@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>99乘法表</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		ul{margin:0;padding: 0;list-style: none;}
+		.multiply-ul{margin-top:-1px;}
+		.multiply-ul >li{border:1px solid #eee;width:70px;height:26px;margin-left:-1px;line-height: 30px;text-align: center;display: inline-block;color:#666;font-size: 13px;
+			opacity: 0;
+			-webkit-transition:all 0.2s linear 0s;-moz-transition:all 0.2s linear 0s;transition:all 0.2s linear 0s;
+		}
+	</style>
+</head>
+<body>
+	<div id="multiply-tb"></div>
+	<script type="text/javascript">
+		window.onload = function(){
+			var htmlStr = createMultiplyTable();
+			document.getElementById("multiply-tb").innerHTML = htmlStr;
+			var domArr = document.querySelectorAll(".multiply-ul li");
+			show(domArr,0);
+		}
+		function show(arr,index){
+			setTimeout(function(argument) {
+				if(index < arr.length){
+					arr[index].style.opacity = "1";
+					show(arr,index + 1);
+				}else{
+					hide(arr,index - 1);
+				}
+			},80)
+		}
+		function hide(arr,index){
+			setTimeout(function(argument) {
+				if(index > -1){
+					arr[index].style.opacity = "0";
+					hide(arr,index - 1);
+				}else{
+					show(arr,index + 1);
+				}
+			},100)
+		}
+		function createMultiplyTable(){
+			var ulHtmlStr = '';
+			for(var i = 1; i<10; i++){
+				ulHtmlStr += '<ul class="multiply-ul">';
+				var liHtmlStr = '';
+				for(var j = 1; j<i+1; j++){
+					liHtmlStr += '<li>'+ j +'*'+ i +'='+ i*j +'</li>';
+				}
+				ulHtmlStr += liHtmlStr;
+				ulHtmlStr += '</ul>';
+			}
+			return ulHtmlStr;
+		}
+	</script>
+</body>
+
+</html>
