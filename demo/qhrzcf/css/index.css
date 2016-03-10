@@ -1,0 +1,150 @@
+
+
+.index-sprite{background:url(../img/index.png);}
+.index-sprite01{background-position: -1px -2px;width:104px;height: 104px;}
+.index-sprite02{background-position: -107px -2px;width:104px;height: 104px;}
+.index-sprite-ftxweibo{background-position: -213px -2px;width:59px;height: 59px;}
+.index-sprite-fweibo{background-position: -276px -2px;width:59px;height: 59px;}
+.index-sprite-fqq{background-position: -213px -62px;width:59px;height: 59px;}
+.index-sprite-fweichat{background-position: -276px -62px;width:59px;height: 59px;}
+.index-sprite-fphone{background-position: -440px -79px;width:50px;height: 50px;vertical-align: top;}
+.index-sprite-gdlc{background-position: -339px -2px;width:29px;height: 26px;}
+.index-sprite-p2p{background-position: -369px -2px;width:29px;height: 26px;}
+.index-sprite-lcxt{background-position: -401px -2px;width:32px;height: 26px;}
+.index-sprite-smjj{background-position: -434px -1px;width:28px;height: 30px;}
+.index-sprite-home{background-position: -343px -33px;width:16px;height: 16px;margin-top: -3px;margin-right: 2px;}
+.index-sprite-phone1{background-position: -363px -34px;width:18px;height: 18px;margin-right: 5px;  margin-top: -4px;}
+.index-sprite-bao{background-position: -383px -32px;width:22px;height: 22px;  margin-top: -5px;}
+.index-sprite-hot{background-position: -409px -36px;width:24px;height: 16px;margin-top: -10px; margin-right: 5px;}
+.index-sprite-news{background-position: -437px -35px;width:20px;height: 20px;}
+.index-sprite-tips1{background-position: -340px -55px;width:24px;height: 28px;margin-top: -5px;}
+.index-sprite-tips2{background-position: -365px -55px;width:24px;height: 28px;margin-top: -5px;}
+.index-sprite-qust1{background-position: -343px -88px;width:16px;height: 16px;margin-right: 8px;margin-top: -3px;}
+.index-sprite-qust2{background-position: -362px -88px;width:16px;height: 16px;margin-right: 8px;margin-top: -3px;}
+.index-sprite-weibo{background-position: -413px -60px;width:20px;height: 18px;margin-top: -5px; margin-right: 5px;}
+.index-sprite-weichat{background-position: -392px -61px;width:20px;height: 18px;margin-top: -5px;margin-left:12px; margin-right: 5px;}
+.index-sprite-phone{background-position: -435px -60px;width:16px;height: 18px;margin-top: -4px;margin-right: 3px; }
+.index-sprite-date{background-position: -388px -87px;width:20px;height: 20px;  vertical-align: top;}
+.index-sprite-arrow1{background-position: -415px -101px;width:10px;height: 12px;}
+.index-sprite-arrow2{background-position: -415px -84px;width:10px;height: 12px;}
+.index-sprite-top{background-position: -463px -2px;width:68px;height: 70px;float:right;margin-top: -1px;}
+.index-sprite-hotf{background-position: -494px -82px;width:38px;height: 38px;position: absolute;top:-2px;left: 5px;}
+
+.index-btn{display: block; width: 150px;text-align: center; margin: 20px auto; height: 40px; line-height: 40px; letter-spacing: 1px;}
+.index-btn:hover{color:#fff;text-decoration: none;}
+
+.index-info{margin-top:15px;}
+.index-info>div{display: inline-block;zoom:1;*display: inline;}
+.index-info-block{padding-top:16px;margin-right:10px;cursor: pointer;border: 1px solid #EFEFEF;background-color: #FAFAFA;width:288px;height: 190px;text-align: center;}
+.index-info-block h5{font-size: 16px;margin:8px 0;}
+.index-info-block p{font-size: 14px;letter-spacing: 1px;}
+
+.index-news{width:300px;height:195px;}
+.index-news h4{padding: 12px 0;}
+.index-news h4>a{float: right;  float: right; font-size: 12px; margin-top: 8px;font-weight: normal;}
+.news-ul li{padding:10px 5px;border-bottom: 1px dashed #EEEEEE;font-size: 12px;color: #666;}
+.news-ul li a{display: inline-block;zoom:1;*display: inline;width:205px;  vertical-align: middle;white-space: nowrap;overflow: hidden;text-overflow:ellipsis;}
+.news-ul li span{float: right;}
+
+.circle{width:8px;height:8px;background-color: #ccc;border-radius: 4px;margin-right:10px;display: inline-block;zoom:1;*display: inline;}
+.index-new{width: 272px;height: 195px;vertical-align: top;margin-top:5px;  margin-left: 15px;}
+.index-new h4{font-size: 14px;width:90%;margin-bottom: 5px;white-space: nowrap;overflow: hidden;text-overflow:ellipsis;}
+.index-new p{font-size: 12px;  line-height: 2em; margin-bottom: 6px;}
+.index-new img{width: 272px;height: 93px;}
+
+.product-group{margin-top:20px;}
+.product-group-hd{font-size: 20px;margin-bottom: 10px;}
+.product-group-hd .index-sprite{  margin-top: -5px;}
+.product-group-hd span{font-size: 14px;font-weight: normal;  margin-left: 10px;}
+.product-group-hd .more{float:right;margin-top:14px;font-size: 12px;font-weight: normal;}
+
+.product-info{width:272px;height:430px;display: inline-block;zoom:1;*display: inline;}
+.product-info-hd h2{font-size: 24px;line-height: 2.4;text-align:right;padding-right:15px;color: #fff;height:54px;background-color: #726AB3;display: inline-block;zoom:1;*display: inline;vertical-align: top;  margin-left: -5px; width: 218px;}
+.product-info-hd h2 span{font-size: 12px;margin-right:5px;color: #dedbf7;font-weight: normal;}
+.product-info .border-ou>img{width:272px;height:196px;margin-top:-3px;margin-bottom: 29px;}
+.product-info .border-ou>h3{font-size: 16px;font-weight: normal;padding: 0 0 10px 15px; border-bottom: 1px dashed #dfdfdf;}
+.product-security{  padding: 15px 15px;font-size: 12px;}
+.product-security>p{line-height: 2.2em;}
+.product-security>p img{margin:0 5px;} 
+.product-security *{vertical-align: middle;}
+
+.product-content{border-top:2px solid #726ab3; width: 928px; -ms-margin-left: -5px;-webkit-margin-left: -5px;-moz-margin-left:0;margin-left:-5px; vertical-align: top;display: inline-block;zoom:1;*display: inline;height: 430px;}
+
+.p2p-item{margin:7px 0 0 5px;text-align:center;border-radius: 5px;border:1px solid #eee;padding:5px 0 10px 0;width:923px;height:100px;position: relative;}
+.p2p-item>div{vertical-align:top;display: inline-block;zoom:1;*display: inline;height: 100%;border-right: 1px solid #eee;}
+.p2p-item-name{width:320px;line-height: 90px;font-size: 14px;text-align: left; padding-left: 14px;}
+.p2p-item-num{width:120px;}
+.p2p-item-num p{margin-top:12px;margin-bottom: 10px;font-size: 24px;}
+.p2p-item-num p span{font-size: 14px;}
+.p2p-item-num label{font-size: 12px;}
+.p2p-item-chart{width:140px;}
+.p2p-item>div.p2p-item-btn{border-right: none;width:180px;}
+
+.borderright{border-right: 1px solid #eee;}
+.product-content-v{border-bottom: 1px solid #eee;border-right: 1px solid #eee;height:429px;}
+.product-item-div,.product-tips{display: inline-block;zoom:1;*display: inline;}
+.product-item-v{display: inline-block;zoom:1;*display: inline;width:308px;padding:20px;}
+.insurance-item-name{margin-top:25px;font-size: 16px;border-bottom: 1px dashed #dfdfdf;padding-bottom: 15px;text-align: center;}
+.insurance-item-money{margin-top:28px;border-bottom: 1px dashed #dfdfdf;font-size:24px;padding-bottom: 20px;text-align: center;}
+.insurance-item-money span{font-size:36px;}
+.insurance-item-info{border-bottom: 1px dashed #dfdfdf;  margin-top: 15px; padding-bottom: 15px;font-size: 14px;}
+.insurance-item-info label{margin-right:50px;margin-left:15px;}
+.insurance-item-desc{line-height: 2.2em;font-size: 12px;margin-top:13px;}
+.insurance-item .btn{margin-bottom: 0;margin-top:25px;}
+
+.product-tips{vertical-align: top;margin-top: 15px;}
+.product-tip{border:1px solid;width:274px;height: 175px;margin-left:20px;padding:15px;border-radius: 2px;}
+.product-tip h3{font-size: 18px;font-weight: normal;margin-bottom: 8px;}
+.product-tip p{line-height: 2.1em;font-size: 14px;}
+.product-tips img{margin-top: 43px;margin-left: 20px;}
+
+.tot-item-name{font-size: 16px;margin-bottom: 15px;}
+.tot-item-name img{vertical-align: middle;  margin-left: -5px; margin-right: 5px;}
+.tot-item-info{font-size: 12px;line-height: 1.3em;margin-bottom: 13px;}
+.tot-item-rate{border-top: 1px dashed #dfdfdf;padding-top:15px;margin-bottom: 20px;font-size: 14px;}
+.tot-item-rate .text-money{margin-left: 20px;}
+.tot-item-sale{border-bottom: 1px dashed #dfdfdf;padding-bottom: 20px;font-size: 14px;}
+.tot-item-sale label{margin-right: 40px;}
+.tot-item-sale span{font-size: 16px;margin-left: 10px;}
+.tot-item-desc{border-bottom: 1px dashed #dfdfdf;padding:20px 0 14px 0;font-size: 12px;line-height: 1.8em;}
+.tot-item .btn{margin-bottom: 5px;margin-top:35px;}
+
+.insurance-group .product-tip{border-color: #eee6c5;background-color: #faf6e6}
+.insurance-group .product-tip h3{color:#ad9741;}
+.tot-group .product-tip{border-color: #e2f4f8;background-color: #eefbfe}
+.tot-group .product-tip h3{color:#248bbb;}
+
+.school-div{display: inline-block;zoom:1;*display: inline;vertical-align:top;border:1px solid #eee;height:382px;width: 384px;padding:20px 8px 0 15px;margin-top: 10px;}
+.school-item-hd{font-weight: normal;border-bottom: 3px solid #ccc;height: 30px;}
+.school-item-hd p{color: #736dad;font-size: 16px;width: 80px;height:30px;border-bottom: 3px solid #736DAE;}
+.school-item-hd a{  float: right; margin-top: -26px; font-size: 12px;}
+.consult-div{margin-right: 5px;}
+.consult-item{margin-top:15px;}
+.consult-item>*,.school-info-info>*{display: inline-block;zoom:1;*display: inline;vertical-align: middle;}
+.consult-item>img{width:50px;}
+.consult-item>div{width:290px;margin-left:12px;font-size: 14px;}
+.consult-item>div>span{vertical-align: middle;}
+.kf-name{vertical-align: middle;font-weight: bold;}
+.kf-qust{vertical-align: middle;font-weight: bold;display: inline-block;zoom:1;*display: inline;width: 200px;white-space: nowrap;overflow: hidden;text-overflow:ellipsis;}
+.kf-time{font-size: 12px;margin-top:8px;}
+.school-info-info{margin-top:10px;font-size: 14px;}
+.school-info-info>img{width:176px;height: 111px;}
+.school-info-info>div{width: 170px;vertical-align: top;}
+.school-info-info>div>h4{margin:5px 0 8px -3px;font-weight: normal;}
+.school-info-info>div>p{line-height: 1.8em;margin-left: 3px;}
+.school-info-info>div>label{font-size: 12px;float: right;margin-top: 10px;}
+.school-info-item li{font-size: 14px;border-bottom: 1px dashed #dfdfdf;height:52px;cursor:pointer;padding:10px 0 5px 0;}
+.school-info-item li:hover .index-sprite-arrow1{background-position: -415px -84px;}
+.school-info-item li:hover span,.school-info-item li:hover a{color:#996699;}
+.school-info-item li.last{border:none;}
+.school-info-item li>*{vertical-align: middle;}
+.school-info-item li>a{display: inline-block;zoom:1;*display: inline;width: 185px;white-space: nowrap;overflow: hidden;text-overflow:ellipsis;}
+.school-info-item li>label{font-size: 12px;float:right;  margin-right: 8px;  margin-top: 3px;}
+.knowledge-div{border-right: none;}
+.finance-div{border-left: none;margin-left: -10px;padding-left: 55px; width: 425px;}
+
+
+
+
+
+

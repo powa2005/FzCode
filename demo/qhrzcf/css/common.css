@@ -1,0 +1,55 @@
+* {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-family: Tahoma,"Microsoft YaHei",SimSun,Arial,Helvetica,sans-serif;}
+html,body{margin:0;padding: 0;width:100%;height:100%;}
+ul,p,h1,h2,h3,h4,h5,h6{padding:0;margin: 0;list-style: none;}
+a{text-decoration: none;}
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
+input[type=button],input[type=submit],button{border:none;}
+
+.text-333, .text-333 a, a.text-333{color:#333;}
+.text-666, .text-666 a, a.text-666{color:#666;}
+.text-999, .text-999 a, a.text-999{color:#999;}
+.text-main, .text-main a, a.text-main{color:#763dad;}
+.text-orange, .text-orange a, a.text-orange{color:#ff6123;}
+.text-purple, .text-purple a, a.text-purple{color:#7871b3;}
+
+.text-money{font-size: 36px;}
+.text-money span{font-size: 24px;}
+
+a:hover{text-decoration: underline;color: #996699;}
+
+.btn{font-size:16px;cursor:pointer;border-radius: 4px;display: inline-block;zoom:1;*display: inline;padding:10 20px;color:#fff;}
+
+.btn-submit{background-color: #986699;}
+.btn-submit:hover{background-color: #986699;}
+.btn-success{background-color: #E9C33C;}
+.btn-success:hover{background-color: #f3ca39;}
+.btn-info{background-color: #986699;}
+.btn-info:hover{background-color: #986699;}
+
+.h-ul li{display: inline-block;zoom:1;*display: inline;}
+
+.container{width:1200px;margin:0 auto;}
+
+.sprite{display: inline-block;zoom:1;*display: inline;vertical-align: middle;}
+
+.border-ou{border-left:1px solid #eee;border-bottom:1px solid #eee;border-right:1px solid #eee;}
+
+.processingbar {
+  text-align: center;
+  position: relative;
+  width: 80px;
+  margin-left: 25px;
+}
+.processingbar font {
+  color: #333;
+  display: block;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 12px;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0px 0 0 0px;
+}
