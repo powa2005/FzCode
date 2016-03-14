@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    
+    <title>前海融租在线客户端APP下载</title>
+    <link rel="stylesheet" href="css/mstyle.css">
+    <link rel="stylesheet" href="js/zepto.fullpage.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <script type="text/javascript">
+    try{
+        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+           
+        }else{
+            window.location.href='index.html';
+        }
+    }catch(e){
+        
+    }
+</script>
+</head>
+<body>
+    <div class="wp">
+        <div class="wp-inner">
+            <div class="page page1">
+                <div class='contanier'>
+                    <img class='logo' src="img/logo.png" />
+                    <h2>
+                        随时随地<br/>掌握财富
+                    </h2>
+                    <P>移动理财 轻松随行</P>
+                    <a class="btn">
+                        <i><img src='img/dl.png'/></i>
+                        <div>客户端下载</div>
+                    </a>
+                </div>
+            </div>
+            <div class="page page2">
+                <div class="text-content">
+                    <div class="img"></div>
+                    <h2>方 便</h2>
+                    <span>随时随地 投标无局限</span>
+                    <p>无论何时，无论何地<br/>
+                       只要手机在手<br/>
+                        想要投标时就投标<br/>
+                        简单方便，轻松搞定</p>
+                </div>
+            </div>
+            <div class="page page3">
+                <div class="text-content">
+                    <div class="img"></div>
+                    <h2>快 捷</h2>
+                    <span>手机理财 功能不打折</span>
+                    <p>注册、登 录、充值、<br/>
+                       投标、提现等，<br/>
+                        统统不用愁，无需电脑<br/>
+                        一部手机即OK！</p>
+                </div>
+            </div>
+            <div class="page page4">
+                <div class="text-content">
+                    <div class="img"></div>
+                    <h2>安 全</h2>
+                    <span>多重保障 投资倍儿放心</span>
+                    <p>手势密码  保障升级<br/>
+                       信息加密  隐私呵护<br/>
+                       资金托管  安全至上<br/>
+                       100%本息保障 投资无忧</p>
+                </div>
+            </div>
+            <div class="page page5">
+                <div class="text-content">
+                    <div class="img"></div>
+                    <h2>清 晰</h2>
+                    <span>数据直观 收益实时看</span>
+                    <p>收益回款  立即知晓<br/>
+                       资金流动  一目了然<br/>
+                       数据查询  清晰透明</p>
+                </div>
+            </div>
+            <div class="page page6">
+                <h3>前海融租在线APP</h3>
+                <p>移动理财 轻松随行</p>
+                <a class="btn">
+                    <i><img src='img/dl.png'/></i>
+                    <div>客户端下载</div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <span class="start"><b></b></span>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/zepto.fullpage.js"></script>
+    <script>
+        $('.wp-inner').fullpage({
+            change: function (e) {
+                switch(e.cur){
+                    case 0:
+                        $(".logo").addClass('animated lightSpeedIn');
+                        $(".contanier h2").addClass('animated fadeInLeft');
+                        $(".contanier p").addClass('animated bounceIn');
+                        $(".contanier .btn").addClass('animated fadeInUp');
+                        $('.start').css('transform','rotate(0deg)');
+                        break;
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                        var index = e.cur+1;
+                        $(".page"+index+" .img").addClass('animated flipInY');
+                        $(".page"+index+" h2").addClass('animated fadeInUp');
+                        $(".page"+index+" span").addClass('animated fadeInUp');
+                        $(".page"+index+" p").addClass('animated fadeInUp');
+                        $('.start').css('transform','rotate(0deg)');
+                        break;
+                    case 5:
+                        $(".page6 h3").addClass('animated fadeIn');
+                        $(".page6 p").addClass('animated fadeIn');
+                        $(".page6 .btn").addClass('animated bounceInUp');
+                        $('.start').css('transform','rotate(180deg)');
+                        break;
+                    default:
+                        return;break;
+                }
+               
+            },
+            beforeChange: function (e) {
+                console.log(e.next,e.cur)
+                switch(e.cur){
+                    case 0:
+                        $(".logo").removeClass('animated lightSpeedIn');
+                        $(".contanier h2").removeClass('animated fadeInLeft');
+                        $(".contanier p").removeClass('animated bounceIn');
+                        $(".contanier .btn").removeClass('animated fadeInUp');
+                        break;
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                        var index = e.cur+1;
+                        $(".page"+index+" .img").removeClass('animated flipInY');
+                        $(".page"+index+" h2").removeClass('animated fadeInUp');
+                        $(".page"+index+" span").removeClass('animated fadeInUp');
+                        $(".page"+index+" p").removeClass('animated fadeInUp');
+                        break;
+                    case 5:
+                        $(".page6 h3").removeClass('animated fadeIn');
+                        $(".page6 p").removeClass('animated fadeIn');
+                        $(".page6 .btn").removeClass('animated bounceInUp');
+                        break;
+                    default:
+                        return;break;
+                }
+            },
+            afterChange: function (e) {
+                
+            }
+        });
+    </script>
+</body>
+</html>

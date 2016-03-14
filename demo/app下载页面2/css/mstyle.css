@@ -1,0 +1,151 @@
+/* line 15, mstyle.scss */
+html, body { font-family: "Microsoft YaHei",Verdana,Tahoma,Arial,Helvetica, sans-serif; }
+
+/* line 16, mstyle.scss */
+.wp { position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; }
+
+@-webkit-keyframes start { /* line 25, mstyle.scss */
+  0% { opacity: 0.1; -webkit-transform: translate(0, -5px); }
+  /* line 29, mstyle.scss */
+  100% { opacity: 1; -webkit-transform: translate(0, 5px); } }
+
+@keyframes start { /* line 35, mstyle.scss */
+  0% { opacity: 0.1; transform: translate(0, -5px); }
+  /* line 40, mstyle.scss */
+  100% { opacity: 1; transform: translate(0, 5px); } }
+
+/* line 45, mstyle.scss */
+.start { position: fixed; left: 50%; margin-left: -17px; top: 95%; margin-top: -18px; width: 34px; height: 34px; }
+
+/* line 54, mstyle.scss */
+.start b { position: absolute; left: 50%; top: 10px; margin-left: -9px; width: 20px; height: 18px; background: url(../img/arrow.png); background-size: 100% 100%; -webkit-animation: start 1.5s infinite ease-in-out; animation: start 1.5s infinite ease-in-out; }
+
+/* line 66, mstyle.scss */
+.btn { width: 67%; height: 55px; display: block; border: 1px rgba(255, 255, 255, 0.4) solid; background-color: rgba(40, 60, 132, 0.4); border-radius: 7px; }
+/* line 68, mstyle.scss */
+.btn i { display: inline-block; background-color: rgba(255, 255, 255, 0.1); height: 55px; width: 55px; }
+/* line 70, mstyle.scss */
+.btn i img { height: 1.6rem; margin: 15px; vertical-align: middle; }
+/* line 72, mstyle.scss */
+.btn div { text-align: center; display: inline-block; width: 60%; font-size: 1.5rem; vertical-align: top; line-height: 50px; }
+
+/* line 74, mstyle.scss */
+.text-content { width: 78%; height: 80%; text-align: center; color: #fff; margin: 0 auto; margin-top: 12%; box-sizing: border-box; padding-top: 2rem; }
+/* line 76, mstyle.scss */
+.text-content .img { -webkit-animation-delay: 0.1s; -moz-animation-delay: 0.1s; -ms-animation-delay: 0.1s; -o-animation-delay: 0.1s; animation-delay: 0.1s; background-image: url(../img/icon.png); width: 105px; height: 105px; margin: 0 auto; }
+/* line 79, mstyle.scss */
+.text-content h2 { -webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; -ms-animation-delay: 0.2s; -o-animation-delay: 0.2s; animation-delay: 0.2s; font-size: 3.8rem; margin-top: 1rem; margin-bottom: 1rem; font-weight: normal; }
+/* line 82, mstyle.scss */
+.text-content span { -webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4s; -ms-animation-delay: 0.4s; -o-animation-delay: 0.4s; animation-delay: 0.4s; display: block; width: 84%; height: 40px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.4); line-height: 38px; font-size: 1.3rem; letter-spacing: 2px; margin: 0 auto; }
+/* line 85, mstyle.scss */
+.text-content p { -webkit-animation-delay: 0.5s; -moz-animation-delay: 0.5s; -ms-animation-delay: 0.5s; -o-animation-delay: 0.5s; animation-delay: 0.5s; font-size: 0.9rem; letter-spacing: 2px; line-height: 1.6rem; margin-top: 1rem; }
+
+/* line 89, mstyle.scss */
+.page { background-size: 100% 100%; color: #fff; }
+
+/* line 93, mstyle.scss */
+.page1 { background-image: url(../img/p-1.png); }
+/* line 95, mstyle.scss */
+.page1 h2 { font-size: 3.8rem; margin: 0; font-weight: normal; line-height: 4.8rem; letter-spacing: 2px; -webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; -ms-animation-delay: 0.3s; -o-animation-delay: 0.3s; animation-delay: 0.3s; }
+/* line 96, mstyle.scss */
+.page1 p { font-size: 1.2rem; margin: 10px 0 20px 0; -webkit-animation-delay: 0.8s; -moz-animation-delay: 0.8s; -ms-animation-delay: 0.8s; -o-animation-delay: 0.8s; animation-delay: 0.8s; }
+/* line 97, mstyle.scss */
+.page1 .btn { -webkit-animation-delay: 1.2s; -moz-animation-delay: 1.2s; -ms-animation-delay: 1.2s; -o-animation-delay: 1.2s; animation-delay: 1.2s; }
+
+/* line 99, mstyle.scss */
+.page2 { background-image: url(../img/p-2.png); }
+/* line 101, mstyle.scss */
+.page2 .text-content { background-color: rgba(7, 36, 95, 0.27); }
+/* line 103, mstyle.scss */
+.page2 .text-content .img { background-position: -0px -0px; }
+/* line 106, mstyle.scss */
+.page2 .text-content span { background-color: rgba(69, 89, 150, 0.19); }
+
+/* line 111, mstyle.scss */
+.page3 { background-image: url(../img/p-3.png); }
+/* line 113, mstyle.scss */
+.page3 .text-content { background-color: rgba(147, 59, 36, 0.27); }
+/* line 115, mstyle.scss */
+.page3 .text-content .img { background-position: -0px -121px; }
+/* line 118, mstyle.scss */
+.page3 .text-content span { background-color: rgba(184, 53, 1, 0.19); }
+
+/* line 123, mstyle.scss */
+.page4 { background-image: url(../img/p-4.png); }
+/* line 125, mstyle.scss */
+.page4 .text-content { background-color: rgba(17, 98, 91, 0.17); }
+/* line 127, mstyle.scss */
+.page4 .text-content .img { background-position: -123px -119px; }
+/* line 130, mstyle.scss */
+.page4 .text-content span { background-color: rgba(10, 76, 96, 0.19); width: 90%; }
+
+/* line 135, mstyle.scss */
+.page5 { background-image: url(../img/p-5.png); }
+/* line 137, mstyle.scss */
+.page5 .text-content { background-color: rgba(56, 17, 98, 0.17); }
+/* line 139, mstyle.scss */
+.page5 .text-content .img { background-position: -123px -2px; }
+/* line 142, mstyle.scss */
+.page5 .text-content span { background-color: rgba(65, 35, 107, 0.19); width: 90%; }
+
+/* line 147, mstyle.scss */
+.page6 { background-image: url(../img/p-6.png); text-align: center; width: 100%; }
+/* line 149, mstyle.scss */
+.page6 h3 { font-weight: normal; font-size: 2rem; margin-top: 45%; margin-bottom: 0; -webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; -ms-animation-delay: 0.2s; -o-animation-delay: 0.2s; animation-delay: 0.2s; }
+/* line 150, mstyle.scss */
+.page6 p { font-size: 1rem; margin-top: 15px; margin-bottom: 40%; -webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; -ms-animation-delay: 0.3s; -o-animation-delay: 0.3s; animation-delay: 0.3s; }
+/* line 151, mstyle.scss */
+.page6 .btn { width: 65%; height: 60px; display: block; text-align: center; margin: 0 auto; background-color: rgba(40, 60, 132, 0.2); }
+/* line 153, mstyle.scss */
+.page6 .btn i { display: inline-block; height: 55px; width: 40px; background-color: rgba(255, 255, 255, 0); }
+/* line 155, mstyle.scss */
+.page6 .btn i img { margin-top: 15px; width: 25px; }
+/* line 157, mstyle.scss */
+.page6 .btn div { text-align: center; display: inline-block; width: 65%; font-size: 1.5rem; vertical-align: top; line-height: 53px; letter-spacing: 4px; }
+
+/* line 161, mstyle.scss */
+.contanier { width: 84%; margin: 0 auto; height: 100%; }
+
+/* line 164, mstyle.scss */
+.logo { width: 77%; margin-top: 10%; margin-bottom: 2%; }
+
+@media screen and (max-width: 321px) { /* line 171, mstyle.scss */
+  html, body { font-size: 14px; }
+  /* line 172, mstyle.scss */
+  .btn { width: 67%; height: 45px; }
+  /* line 174, mstyle.scss */
+  .btn i { display: inline-block; background-color: rgba(255, 255, 255, 0.1); height: 45px; width: 45px; }
+  /* line 176, mstyle.scss */
+  .btn i img { height: 1.4rem; margin: 10px; vertical-align: middle; }
+  /* line 178, mstyle.scss */
+  .btn div { text-align: center; display: inline-block; width: 67%; font-size: 1.3rem; letter-spacing: 2px; vertical-align: top; line-height: 40px; }
+  /* line 182, mstyle.scss */
+  .page6 .btn { width: 70%; height: 50px; display: block; text-align: center; margin: 0 auto; background-color: rgba(40, 60, 132, 0.2); }
+  /* line 184, mstyle.scss */
+  .page6 .btn i { display: inline-block; height: 55px; width: 40px; background-color: rgba(255, 255, 255, 0); }
+  /* line 186, mstyle.scss */
+  .page6 .btn i img { margin-top: 10px; width: 25px; }
+  /* line 188, mstyle.scss */
+  .page6 .btn div { text-align: center; display: inline-block; width: 65%; font-size: 1.5rem; vertical-align: top; line-height: 45px; letter-spacing: 4px; } }
+@media screen and (max-height: 482px) { /* line 194, mstyle.scss */
+  .text-content .img { width: 85px; height: 85px; background-size: 200%; }
+  /* line 197, mstyle.scss */
+  .text-content h2 { font-size: 3.2rem; margin-top: 0.8rem; margin-bottom: 0.8rem; }
+  /* line 200, mstyle.scss */
+  .text-content span { line-height: 34px; }
+  /* line 203, mstyle.scss */
+  .text-content p { line-height: 1.6rem; margin-top: 0.8rem; }
+  /* line 207, mstyle.scss */
+  .page3 .text-content .img { background-position: -0px -251px; }
+  /* line 210, mstyle.scss */
+  .page4 .text-content .img { background-position: -255px -250px; }
+  /* line 213, mstyle.scss */
+  .page5 .text-content .img { background-position: -255px -1px; }
+  /* line 216, mstyle.scss */
+  .btn i img { margin-top: 10px; margin-left: 10px; } }
+@media screen and (min-height: 482px) and (max-height: 569px) { /* line 222, mstyle.scss */
+  .text-content { padding-top: 15px; }
+  /* line 226, mstyle.scss */
+  .btn i img { height: 1.4rem; margin-top: 15px; vertical-align: middle; } }
+@media screen and (min-height: 569px) { /* line 233, mstyle.scss */
+  .text-content { padding-top: 2.2rem; } }
