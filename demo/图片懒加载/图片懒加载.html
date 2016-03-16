@@ -1,0 +1,152 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>图片懒加载</title>
+	<style type="text/css">
+		* {  
+		    margin: 0;  
+		    padding: 0;  
+		}  
+		  
+		#div1 {  
+		    width: 520px;  
+		    margin: 0 auto 30px auto;  
+		    border: 1px solid red;  
+		    overflow: hidden;  
+		}  
+		  
+		li {  
+		    width: 160px;  
+		    height: 160px;  
+		    float: left;  
+		    list-style: none;  
+		    margin: 5px;  
+		    background: url(img/loading.gif) center center no-repeat;  
+		    border: 1px dashed green;  
+		} 
+		img{
+			width: 160px;  
+		    height: 160px;  
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<ul>
+			<li data-src="img/map1.jpg"></li>
+			<li data-src="img/map2.jpg"></li>
+			<li data-src="img/map3.jpg"></li>
+			<li data-src="img/map4.jpg"></li>
+			<li data-src="img/map5.jpg"></li>
+			<li data-src="img/map6.jpg"></li>
+			<li data-src="img/map7.jpg"></li>
+			<li data-src="img/map1.jpg"></li>
+			<li data-src="img/map2.jpg"></li>
+			<li data-src="img/map3.jpg"></li>
+			<li data-src="img/map4.jpg"></li>
+			<li data-src="img/map5.jpg"></li>
+			<li data-src="img/map6.jpg"></li>
+			<li data-src="img/map7.jpg"></li>
+			<li data-src="img/map1.jpg"></li>
+			<li data-src="img/map2.jpg"></li>
+			<li data-src="img/map3.jpg"></li>
+			<li data-src="img/map4.jpg"></li>
+		</ul>
+	</div>
+	
+	<script type="text/javascript">
+		function setImg(index){
+			var oDiv=document.getElementById("div1");
+			var oUl=oDiv.children[0];
+			var aLi=oUl.children;
+			//html5的新属性
+			if(aLi[index].dataset){
+				var src=aLi[index].dataset.src;
+			}else{
+				var src=aLi[index].getAttribute('data-src');
+			}
+			var oImg=document.createElement('img');
+			oImg.src=src;
+			if(aLi[index].children.length==0){
+				aLi[index].appendChild(oImg);
+			}
+		}
+		function getH(obj){
+			var h=0;
+			while(obj){
+				h+=obj.offsetTop;
+				obj=obj.offsetParent;
+			}
+			return h;
+		}
+		window.onscroll=function(){
+			var oDiv=document.getElementById("div1");
+			var oUl=oDiv.children[0];
+			var aLi=oUl.children;
+			for(var i=0;i<aLi.length;i++){
+				var oLi=aLi[i];
+				//检查oLi是否在可视区域
+				var t=document.documentElement.clientHeight+ (document.documentElement.scrollTop || document.body.scrollTop);  
+				var h=getH(oLi);
+				if(h<t){
+					setTimeout("setImg("+i+")",500);
+					//setImg(i);
+				}
+			}
+			if(getScrollTop()+getWindowHeight()==getScrollHeight()){ 
+				//滚到底部，加载3排照片
+				for(var j=0;j<9;j++){
+					var oNLi=document.createElement('li');
+					var oImg=document.createElement('img');
+					oImg.src="img/map"+j+".jpg";
+					oNLi.appendChild(oImg);
+					oUl.appendChild(oNLi);
+				}
+			}
+		}
+		window.onload=function(){
+			window.onscroll();
+		}
+		//滚动条在Y轴上的滚动距离
+
+		function getScrollTop(){
+		　　var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+		　　if(document.body){
+		　　　　bodyScrollTop = document.body.scrollTop;
+		　　}
+		　　if(document.documentElement){
+		　　　　documentScrollTop = document.documentElement.scrollTop;
+		　　}
+		　　scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+		　　return scrollTop;
+		}
+
+		//文档的总高度
+
+		function getScrollHeight(){
+		　　var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
+		　　if(document.body){
+		　　　　bodyScrollHeight = document.body.scrollHeight;
+		　　}
+		　　if(document.documentElement){
+		　　　　documentScrollHeight = document.documentElement.scrollHeight;
+		　　}
+		　　scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+		　　return scrollHeight;
+		}
+
+		//浏览器视口的高度
+
+		function getWindowHeight(){
+		　　var windowHeight = 0;
+		　　if(document.compatMode == "CSS1Compat"){
+		　　　　windowHeight = document.documentElement.clientHeight;
+		　　}else{
+		　　　　windowHeight = document.body.clientHeight;
+		　　}
+		　　return windowHeight;
+		}
+	</script>
+</body>
+</html>
