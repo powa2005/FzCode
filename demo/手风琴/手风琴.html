@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>手风琴</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		html,body,ul{margin:0;padding:0;}
+		ul{list-style: none;}
+		.sfq{margin:0 auto;height:300px;}
+		.sfq-item{height: 100%;float:left;}
+		.sfq-item::before{content: '';position: absolute;width: 90px;height: 300px;background-color:rgba(0,0,0,0.4);transition:background 0.3s ease-in-out 0s;}
+		.sfq-item-hd{height: 100%;width: 90px;float:left;}
+		.sfq-item-cn{height: 100%;width: 0px;float:left;overflow: hidden;transition:width 0.3s ease-in-out 0s;}
+		.sfq-item.active .sfq-item-cn{width: 270px;}
+		.sfq-item.active::before{background-color:rgba(0,0,0,0);}
+		.sfq-item-cn>*{width: 270px;}
+	</style>
+</head>
+<body>
+	<div class="sfq">
+		<div class="sfq-item active" style="background-color:#f0f;">
+			<div class="sfq-item-hd">
+				<h3>t</h3>
+			</div>
+			<div class="sfq-item-cn">
+				<ul>
+					<li>纳税人识别号(地税) : 440300335178839</li>
+					<li>注册资本 : null</li>
+					<li>联系人号码 : null</li>
+					<li>执行状态 : null</li>
+					<li>成立日期 : 2015年3月24日</li>
+					<li>住所 : 深圳市前海深港合作区前湾一路1号A栋201室（入驻深圳市前海商务秘书有限公司）</li>
+					<li>企业类型 : 有限责任公司（法人独资）</li>
+					<li>海关企业等级 : null</li>
+				</ul>
+			</div>
+		</div>
+		<div class="sfq-item" style="background-color:#f00;">
+			<div class="sfq-item-hd">
+				<h3>t</h3>
+			</div>
+			<div class="sfq-item-cn">
+				<ul>
+					<li>纳税人识别号(地税) : 440300335178839</li>
+					<li>注册资本 : null</li>
+					<li>联系人号码 : null</li>
+					<li>执行状态 : null</li>
+					<li>成立日期 : 2015年3月24日</li>
+					<li>住所 : 深圳市前海深港合作区前湾一路1号A栋201室（入驻深圳市前海商务秘书有限公司）</li>
+					<li>企业类型 : 有限责任公司（法人独资）</li>
+					<li>海关企业等级 : null</li>
+				</ul>
+			</div>
+		</div>
+		<div class="sfq-item" style="background-color:#ff0;">
+			<div class="sfq-item-hd">
+				<h3>t</h3>
+			</div>
+			<div class="sfq-item-cn">
+				<ul>
+					<li>纳税人识别号(地税) : 440300335178839</li>
+					<li>注册资本 : null</li>
+					<li>联系人号码 : null</li>
+					<li>执行状态 : null</li>
+					<li>成立日期 : 2015年3月24日</li>
+					<li>住所 : 深圳市前海深港合作区前湾一路1号A栋201室（入驻深圳市前海商务秘书有限公司）</li>
+					<li>企业类型 : 有限责任公司（法人独资）</li>
+					<li>海关企业等级 : null</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		window.onload = function(){
+			var objArr = document.querySelectorAll('.sfq-item');
+			Array.prototype.forEach.call(objArr, function (el) {
+			    el.addEventListener('click', function(){
+			    	if(this.className.indexOf("active")>-1){
+			    		return;
+			    	}
+			    	document.querySelector('.sfq-item.active').className = 'sfq-item';
+			    	this.className += " active"; 
+			    });
+			});
+		}
+	</script>
+</body>
+
+</html>
