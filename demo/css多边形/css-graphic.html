@@ -4,10 +4,25 @@
 	<meta charset="UTF-8">
 	<title>css多边形示例</title>
 	<style type="text/css">
-		div{margin-bottom: 20px;}
-		.square{width: 100px;height: 100px;background: #f00;}
-		.rectangle{width: 200px;height: 100px;background: #f00;}
-		.triangle-topleft{width: 0;height: 0;border-top: 100px solid #f00; border-right: 100px solid transparent;}
+		body{padding-left: 200px;}
+		div{margin-bottom: 40px;}
+		.square{width: 100px;height: 100px;background: #f0f;}
+
+		.rectangle{width: 200px;height: 100px;background: #f0f;}
+		.triangle-topleft{width: 0;height: 0;border-top: 100px solid #f0f; border-right: 100px solid transparent;}
+		.triangle-top{width: 0;height: 0;border-bottom: 50px solid #f0f; border-right: 50px solid transparent; border-left: 50px solid transparent;}
+		.ladder{width: 50px;height: 0;border-bottom: 50px solid #f0f; border-right: 50px solid transparent; border-left: 50px solid transparent;}
+		.ladder2{width: 50px;height: 0;border-bottom: 50px solid #f0f;border-left: 50px solid transparent;}
+		
+		.dialog{width: 100px;height: 50px;background-color:#f0f;border-radius: 5px;position: relative;}
+		.dialog::before{content: "";width: 0;height: 0;position: absolute;border-right: 10px solid #f0f;border-top: 10px solid transparent;border-bottom: 10px solid transparent;left: -10px;top: 15px;}
+		
+		.parallelogram{position: relative;height: 50px;}
+		.parallelogram::before{content: "";width: 20px;height: 0;position: absolute;border-right: 50px solid #f0f;border-top: 50px solid transparent;left: 0px;top: 0px;}
+		.parallelogram::after{content: "";width: 20px;height: 0;position: absolute;border-left: 50px solid #f0f;border-bottom: 50px solid transparent;left: 70px;top: 0px;}
+		
+		
+
 		.border{width: 100px;height: 100px;background-color: #ccc;
 			border-top: 10px solid #f00;
 			border-left: 10px solid #0f0;
@@ -18,14 +33,60 @@
 			border-top: 10px solid transparent;
 			border-left: 10px solid transparent;
 			border-bottom: 10px solid transparent;
-			border-right: 10px solid #ff0;}
+			border-right: 10px solid #f0f;}
 	</style>
-	<!-- <div class="square"></div>
-	<div class="rectangle"></div>
-	<div class="triangle-topleft"></div> -->
+	
 </head>
 <body>
-	
+	<label>开始的一个矩形</label>
+	<div class="border"></div>
+	<label>隐藏其他边框后形成三角形</label>
 	<div class="border t"></div>
+	<!-- 其他图形 -->
+
+	<!-- 正方形 -->
+	<label>正方形</label>
+	<div class="square"></div>
+
+	<!-- 长方形 -->
+	<label>长方形</label>
+	<div class="rectangle"></div>
+
+	<!-- 直角三角形 -->
+	<label>直角三角形</label>
+	<div class="triangle-topleft"></div>
+
+	<!-- 等边三角形 -->
+	<label>等边三角形</label>
+	<div class="triangle-top"></div>
+	
+	<!-- 梯形 -->
+	<label>梯形</label>
+	<div class="ladder"></div>
+
+	<!-- 等腰梯形 -->
+	<label>等腰梯形</label>
+	<div class="ladder2"></div>
+
+	<!-- 平行四边形 -->
+	<label>平行四边形</label>
+	<div class="parallelogram"></div>
+
+	
+
+	<!-- 对话框 -->
+	<label>对话框</label>
+	<div class="dialog"></div>
+
+	<!-- 其他图形 -->
+	<label></label>
+	<div class="triangle-bottom"></div>
+
+	<!-- 其他图形 -->
+	<label></label>
+	<div class="triangle-left"></div>
+
+	<!-- 其他图形 -->
+	<label></label>
 </body>
 </html>
