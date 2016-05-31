@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>video demo</title>
+</head>
+<body>
+	<video width="352" height="264" id="video" controls autobuffer>
+	    <source src="./demo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+	</video>
+
+	<button class="btn" data-type="1">播放</button>
+	<button class="btn" data-type="2" >停止</button>
+	<button class="btn" data-type="3" >全屏</button>
+	
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//获取video对象
+			var oVideo = $('#video');
+
+			oVideo.on('playing',function(){
+				
+				setTimeout(function(){
+					// oVideo[0].pause();
+					// oVideo.remove();
+					
+					// launchFullscreen(oVideo[0]);
+				},1000)
+			})
+			oVideo.on('click',function(){
+				console.log('click');
+			})
+			$('.btn').click(function(){
+				var type = $(this).attr('data-type');
+				switch(type){
+					case '1':
+						oVideo[0].play();
+						break;
+					case '2':
+						oVideo[0].pause();
+						break;
+					case '3':
+						console.log(1);
+						launchFullscreen(oVideo[0]);
+						break;
+					default:
+
+						break;
+				}
+			})
+			$('body').click(function(){
+				console.log('body click');
+				exitFullscreen();
+			})
+		})
+
+		function launchFullscreen(el) {
+		  if(el.requestFullscreen) {
+		    el.requestFullscreen();
+		  } else if(el.mozRequestFullScreen) {
+		    el.mozRequestFullScreen();
+		  } else if(el.webkitRequestFullscreen) {
+		    el.webkitRequestFullscreen();
+		  } else if(el.msRequestFullscreen) {
+		    el.msRequestFullscreen();
+		  }
+		}
+
+		function exitFullscreen(){
+			if (document.exitFullscreen) {
+		      document.exitFullscreen();
+		    } else if (document.msExitFullscreen) {
+		      document.msExitFullscreen();
+		    } else if (document.mozCancelFullScreen) {
+		      document.mozCancelFullScreen();
+		    } else if (document.webkitExitFullscreen) {
+		      document.webkitExitFullscreen();
+		    }
+		}
+	</script>
+</body>
+</html>
