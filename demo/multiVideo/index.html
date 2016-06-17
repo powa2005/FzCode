@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>video demo</title>
+	<style type="text/css">
+		body,html{padding: 0;margin: 0;width: 100%;height: 100%;position: relative;}
+		video{position: relative;}
+		.pop{position: absolute;width: 100%;height: 100%;top:0px;left:0px;background-color: #000;opacity: 0.75;}
+		ul{padding: 0;margin: 0;}
+		.dtable{display: table;}
+		.dtable-row{display: table-row;}
+		/*.video-table video{width: 100%;height: 100%;}*/
+		
+		.video-table{width: 100%;height: 100%;}
+		.video-table li{overflow: hidden;position: relative;display: table-cell;}
+		.video-table li video{position: absolute;}
+		.video-table-cell1{width: 25%;}
+		.video-table-cell2{width: 50%;}
+		.video-btn{position: absolute;z-index:999;width: 100%;height: 0;background:rgba(0,0,0,0.75);text-align: center;overflow: hidden;
+			-webkit-transition:height 0.2s ease-in 0s;
+			-moz-transition:height 0.2s ease-in 0s;
+			transition:height 0.2s ease-in 0s;}
+		.video-table li:hover .video-btn{height: 100%;}
+		.video-btn span{display: inline-block;height: 100%;vertical-align: middle;}
+		.video-btn img{background-color: #f00;width: 50px;height: 50px;}
+	</style>
+</head>
+<body>
+	<div class="dtable video-table">
+		<ul class="dtable-row">
+			<li class="video-table-cell1">
+				<div class="video-btn"><span></span><img src="" /></div>
+				<video id="video1" autobuffer >
+				    <source src="demo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+				</video>
+			</li>	
+			<li class="video-table-cell1">
+				<div class="video-btn"><span></span><img src="" /></div>
+				<video id="video2" autobuffer >
+				    <source src="demo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+				</video>
+			</li>	
+			<li class="video-table-cell2">
+				<div class="video-btn"><span></span><img src="" /></div>
+				<video id="video3" autobuffer >
+				    <source src="demo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+				</video>
+			</li>	
+		</ul>
+		<ul class="dtable-row">
+			<li class="video-table-cell1">
+				<div class="video-btn"><span></span><img src="" /></div>
+				<video id="video4" autobuffer >
+				    <source src="demo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+				</video>
+			</li>	
+			<li class="video-table-cell1">
+				<div class="video-btn"><span></span><img src="" /></div>
+				<video id="video5" autobuffer >
+				    <source src="demo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+				</video>
+			</li>	
+			<li class="video-table-cell2">
+				<div class="video-btn"><span></span><img src="" /></div>
+				<video id="video6" autobuffer >
+				    <source src="demo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+				</video>
+			</li>	
+		</ul>
+	</div>
+	
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//play(1);
+			$('video').on('click',function(){
+				var el = $(this)[0];
+				if(invokeFieldOrMethod(document,'FullScreen') || invokeFieldOrMethod(document,'IsFullScreen') || document.IsFullScreen){
+					exitFullscreen();
+				}else{
+					launchFullscreen(el);
+				}
+				
+			})
+			
+			
+		})
+		
+		function play(i){
+			var count = $('video').length;
+			if(i > count){
+				i = 1;
+			};
+			var currentVideo = $('#video'+i)[0];
+			if(currentVideo){
+				currentVideo.currentTime = 2;
+				currentVideo.play();
+				//n秒后播放下一个video
+				setTimeout(function(){
+					currentVideo.pause();
+					var next = i + 1;
+					play.call(this, next);
+				},2000)
+			}else{
+				alert('当前页面无可播放视频！');
+			}
+			
+		}
+
+		function invokeFieldOrMethod(element, method){
+			var usablePrefixMethod;
+			["webkit", "moz", "ms", "o", ""].forEach(function(prefix) {
+				if (usablePrefixMethod) return;
+				if (prefix === "") {
+					// 无前缀，方法首字母小写
+					method = method.slice(0,1).toLowerCase() + method.slice(1); 
+				}
+				var typePrefixMethod = typeof element[prefix + method];
+				if (typePrefixMethod + "" !== "undefined") {
+					if (typePrefixMethod === "function") {
+						usablePrefixMethod = element[prefix + method]();
+					} else {
+					usablePrefixMethod = element[prefix + method];
+					}
+				}
+			});
+			return usablePrefixMethod;
+		};
+
+		function launchFullscreen(el) {
+		  if(el.requestFullscreen) {
+		    el.requestFullscreen();
+		  } else if(el.mozRequestFullScreen) {
+		    el.mozRequestFullScreen();
+		  } else if(el.webkitRequestFullscreen) {
+		    el.webkitRequestFullscreen();
+		  } else if(el.msRequestFullscreen) {
+		    el.msRequestFullscreen();
+		  }
+		}
+
+		function exitFullscreen(){
+			if (document.exitFullscreen) {
+		      document.exitFullscreen();
+		    } else if (document.msExitFullscreen) {
+		      document.msExitFullscreen();
+		    } else if (document.mozCancelFullScreen) {
+		      document.mozCancelFullScreen();
+		    } else if (document.webkitExitFullscreen) {
+		      document.webkitExitFullscreen();
+		    }
+		}
+	</script>
+</body>
+</html>
