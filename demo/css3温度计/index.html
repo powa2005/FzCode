@@ -6,9 +6,13 @@
 	<title>css3 温度计</title>
 	<style type="text/css">
 		body,html{padding: 0;margin: 0;width: 100%;height: 100%;position: relative;}
-		
-		.thermometer{position: relative;}
-		.tmt-in{position: absolute;width:80px;margin:200px;text-align: center;}
+		@keyframes bounce{
+			0%{-webkit-transform:scale(1);}
+			35%{-webkit-transform:scale(1.5);}
+			100%{-webkit-transform:scale(1);}
+		}
+		.thermometer{position: relative;width: 80px; height: 200px; margin: 30px auto;}
+		.tmt-in{position: absolute;width:80px;height:200px;text-align: center;}
 		.tmt-in>div{display: inline-block;}
 		.animate{-webkit-transition:all 0.3s linear 0s;transition:all 0.3s linear 0s;}
 		.tmt-in-top{width:20px;height:120px;border-radius: 30px 30px 0 0;background: -webkit-radial-gradient(100% 40%,12px 100px, #F7D3B2, #f9a454);border-top:3px solid #f78e20;border-left:3px solid #f78e20;border-right:3px solid #f78e20;position: relative;
@@ -16,6 +20,11 @@
 		.tmt-in-bottom{width: 50px;height: 50px;border-radius: 30px;background:-webkit-radial-gradient(70% 70%,30px 30px, #f1f1f1, #f9a454);border: 3px solid #f78e20;position: absolute;bottom:10px;}
 		.tmt-in-bottom-mask{position: absolute;top:5px;left: 6px;width: 60px;height: 60px;border-radius: 30px;overflow: hidden;}
 		.tmt-in-bottom-mask>div{width: 100%;height: 0;background: #fff;}
+
+		.num{list-style: none;position: absolute;margin:0;padding:0;top:20px;left:0px;}
+		.num li{font-size: 14px;margin-bottom: 10px;}
+		.bounce{-webkit-animation:1s linear 0s none bounce;}
+
 	</style>
 </head>
 <body>
@@ -34,14 +43,23 @@
 				</div>
 			</div>
 		</div>
+		<ul class="num">
+			<li>23</li>
+			<li>24</li>
+			<li>24</li>
+			<li>25</li>
+		</ul>
 	</div>
 	<button class="btn btn-low">降温</button>
 	<button class="btn btn-up">升温</button>
 	
 	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript">
+	var i = 0;
 		$(function(){
+			
 			$('.btn-low').click(function(){
+				$(".num li").removeClass('bounce');
 				var h = $('.tmt-in-top').height();
 				if(h == 0){
 					$('.tmt-in-top').css({border: 'none'});
@@ -60,6 +78,13 @@
 					}else{
 						$('.tmt-in-top').css('height',h);
 					}
+				}
+				$(".num li").eq(i).addClass('bounce');
+				if(i == 3){
+					i = 0;
+					
+				}else{
+					i++;
 				}
 			})
 			$('.btn-up').click(function(){

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas 七巧板应用</title>
+</head>
+<body>
+	<canvas id="canvas">
+		该浏览器不支持canvas
+	</canvas>
+
+	<script type="text/javascript">
+		window.onload = function(){
+			var obj = [
+				{p: [{x:0,y:0},{x:400,y:0},{x:200,y:200}],color:"#caff67"},
+				{p: [{x:0,y:0},{x:200,y:200},{x:0,y:400}],color:"#67beef"},
+				{p: [{x:400,y:0},{x:400,y:200},{x:300,y:300},{x:300,y:100}],color:"#ef3d61"},
+				{p: [{x:300,y:100},{x:300,y:300},{x:200,y:200}],color:"#f9f5a1"},
+				{p: [{x:200,y:200},{x:300,y:300},{x:200,y:400},{x:100,y:300}],color:"#a594c0"},
+				{p: [{x:100,y:300},{x:200,y:400},{x:0,y:400}],color:"#fa8ecc"},
+				{p: [{x:400,y:200},{x:400,y:400},{x:200,y:400}],color:"#f6ca29"}
+			];
+
+			var canvas = document.getElementById('canvas'),
+				context = canvas.getContext('2d');
+			
+			canvas.width = 1024;
+			canvas.height = 800;
+
+			for(var i = 0;i < obj.length; i++){
+				draw(obj[i], context);
+			}
+
+		}
+
+		function draw(path, cxt){
+			var color = '';
+			cxt.beginPath();
+			cxt.moveTo(path.p[0].x, path.p[0].y);
+			for(var i=1;i<path.p.length;i++){
+				cxt.lineTo(path.p[i].x, path.p[i].y);
+				color = path.p[i].color;
+			}
+			cxt.closePath();
+
+			cxt.fillStyle = path.color;
+			cxt.fill();
+		}
+	</script>
+</body>
+</html>
