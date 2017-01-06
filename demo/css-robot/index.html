@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css robot</title>
+	<style type="text/css">
+		@keyframes zoom{
+			0% {transform:rotate(0deg);}
+			3% {transform:rotate(5deg);}
+			9% {transform:rotate(-5deg);}
+			15% {transform:rotate(5deg);}
+			18% {transform:rotate(0deg);}
+			40% {transform:rotate(0deg);}
+			60% {transform:rotate(5deg);}
+			80% {transform:rotate(-5deg);}
+			90% {transform:rotate(0deg);}
+			100% {transform:rotate(0deg);}
+		}
+		html, body{width: 100%;height: 100%;margin: 0;padding: 0;background-color: #ccc;}
+
+		.robot{position: relative;background-color: #eee;width: 400px;height: 600px;margin-top:20px;padding-top:10px;}
+		.robot i{position: absolute;}
+		/*.robot *{}*/
+		.robot-hd{position: absolute;width: 190px;height: 150px;left:105px;z-index: 1111; top: 22px;animation:zoom 5s ease-in infinite;}
+		.robot-hd-top{position: absolute;width: 190px;height: 120px;background-color: #fff;border-radius: 100px 100px 0 0;overflow: hidden;}
+		.robot-hd-top .shadow{position:absolute;z-index:2;width: 100%;height: 100%;background:-webkit-radial-gradient(45% 73%,95% 111%, rgba(255,255,255,0),rgba(0,0,0,0), rgba(0,0,0,0.5));}
+		.robot-hd-bottom .shadow{position:absolute;z-index:2;width: 100%;height: 30px;background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,0.2));}
+		.robot-hd-bottom{position: absolute;width: 190px;height: 24px;background-color: #fff;top: 120px;
+    border-radius: 0 0 100% 100%;overflow: hidden;}
+		.robot-hd-huawen i:nth-of-type(1){height: 15px;background-color: #ccc;width: 100%;top: 13px;}
+		.robot-hd-huawen i:nth-of-type(2){height: 10px;background-color: #f9a438;width: 100%;top: 33px;}
+		.robot-hd-huawen i:nth-of-type(3){height: 15px;background-color: #f9a438;width: 8px;bottom: 0px;left:0px;}
+		.robot-hd-huawen i:nth-of-type(4){height: 15px;background-color: #f9a438;width: 34px;bottom: 0px;left:17px;}
+		.robot-hd-huawen i:nth-of-type(5){height: 15px;background-color: #f9a438;width: 18px;bottom: 0px;left:65px;}
+		.robot-hd-huawen i:nth-of-type(6){height: 15px;background-color: #f9a438;width: 25px;bottom: 0px;left:158px;}
+		.robot-hd-huawen i:nth-of-type(7){height: 77px;background-color: #ccc;width: 2px;bottom: 0px;left:51px;}
+		.robot-hd-huawen i:nth-of-type(8){height: 30px;background-color: #ccc;width: 2px;bottom: 0px;left:100px;}
+		.robot-hd-bottom i:nth-of-type(1){height: 12px;background-color: #ccc;width: 100%;top: 0px;border-radius: 0 0 30% 30%;}
+		.robot-hd-eye{}
+		.robot-hd-eye1{position: absolute; width: 40px; height: 40px; background: #000; border-radius: 50px; top: 33px; left: 61px; border: 5px solid #666; box-shadow: 0px 0px 0px 5px #fff;}
+		.robot-hd-eye1 i{width: 7px;height: 7px;border-radius: 10px;right: 8px;top:12px;background-color: #fff;}
+		.robot-hd-eye2{position: absolute; width: 18px; height: 18px; background: #444; border-radius: 50px; top: 72px; left: 130px; border: 3px solid #fff; box-shadow: 0px 0px 0px 5px #444;}
+		
+
+		.robot-bd{position: absolute;width: 330px;height: 330px;background-color: #fff;top:150px;left:35px;border-radius: 200px;overflow: hidden;}
+
+
+		.robot-bd-shadow1{position: absolute;;z-index: 99;width:100%;    height: 30px;
+    background: linear-gradient(to top, rgba(255,255,255,0), rgba(0,0,0,1));}
+		.robot-bd-shadow2{position: absolute;z-index: 99;width: 100%; height: 100%;background:-webkit-radial-gradient(46% 37%,90% 91%, rgba(255,255,255,0),rgba(0,0,0,0), rgba(0,0,0,0.5));}
+
+		.robot-bd-ball i{width: 100px;height: 100px;background-color: #f9a438;border-radius: 50px;}
+		.robot-bd-ball i:nth-of-type(1){top: -80px; left: 144px;}
+		.robot-bd-ball i:nth-of-type(2){top: 130px; left: 310px;}
+		.robot-bd-ball i:nth-of-type(3){top: 99px; left: -80px;}
+		.robot-bd-ball i:nth-of-type(4){top: 305px; left: 76px;}
+
+
+		.robot-bd-cn{width: 128px; height: 128px; background: #fff; border:26px solid #f9a438; border-radius: 100px; top: 70px; left: 70px; position: absolute;transform: rotate(6deg);}
+		.robot-bd-cn-1 i{width: 100%;height: 26px;background-color: #f9a438;width: 150px;transform-origin:center;}
+		.robot-bd-cn-1 i:nth-of-type(1){top:45px;left: -11px;transform: rotate(90deg);}
+		.robot-bd-cn-1 i:nth-of-type(2){left: -4px; top: 51px;}
+		
+		.robot-bd-cn-2{width: 120px; height: 120px; border-radius: 100px; top: 5px; left: 4px; position: absolute; overflow: hidden;}
+		.robot-bd-cn-2 i:nth-of-type(1){border-right: #ccc solid 50px; border-top: rgba(0,0,0,0) solid 50px; top: -9px; left: -8px;}
+		.robot-bd-cn-2 i:nth-of-type(2){border-right: rgba(0,0,0,0) solid 50px; border-top: #ccc solid 50px; bottom: -8px; right: -9px;}
+		
+		.robot-bd-cn-3 {    width: 70px; height: 70px; background: #ccc; border-radius: 50px; position: absolute; top: 22px; left: 23px; border: 6px solid #fff;overflow: hidden;}
+		.robot-bd-cn-3 i{width: 80px;height: 6px;background-color: #fff;transform: rotate(140deg);}
+		.robot-bd-cn-3 i:nth-of-type(1){top: 19px; left: -13px;	}
+		.robot-bd-cn-3 i:nth-of-type(2){left: -2px; top: 28px;}
+		.robot-bd-cn-3 i:nth-of-type(3){top: 41px; left: 4px;}
+		
+	</style>
+</head>
+
+<body>
+	<div class="robot">
+		<div class="robot-hd">
+
+			<div class="robot-hd-top">
+				<div class="shadow"></div>
+				<div class="robot-hd-huawen">
+					<i></i> <i></i> <i></i> <i></i> <i></i> <i></i> <i></i> <i></i>
+				</div>
+				<div class="robot-hd-eye">
+					<div class="robot-hd-eye1">
+						<i></i>
+					</div>
+					<div class="robot-hd-eye2"></div>
+				</div>
+			</div>
+			<div class="robot-hd-bottom">
+				<i></i>	
+				<div class="shadow"></div>
+			</div>
+		</div>
+		<div class="robot-bd">
+			<div class="robot-bd-shadow1"></div>
+			<div class="robot-bd-shadow2"></div>
+			<div class="robot-bd-ball">
+				<i></i> <i></i> <i></i> <i></i> 
+			</div>
+			<div class="robot-bd-cn">
+				<div class="robot-bd-cn-1">
+					<i></i> <i></i>
+				</div>
+				<div class="robot-bd-cn-2">
+					<i></i> <i></i>
+				</div>
+				<div class="robot-bd-cn-3">
+					<i></i> <i></i> <i></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
