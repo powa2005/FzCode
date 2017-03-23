@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>svg-progress</title>
+	<style type="text/css">
+		#progress { 
+			stroke-dasharray: 565.2px; 
+			stroke-dashoffset: 100px; 
+			transform: rotate(-90deg);
+    		transform-origin: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<svg width="240" height="240" xmlns="http://www.w3.org/2000/svg">
+			<circle id="backdrop" r="90" cy="120" cx="120" stroke-width="3" stroke="#333" fill="none"/> 
+			<circle id="progress" r="90" cy="120" cx="120" stroke-width="3" stroke="red" fill="none"/> 
+
+			<circle id="backdrop" r="90" cy="120" cx="120" stroke-width="3" stroke="#333" fill="none"/> 
+			<circle id="progress" r="90" cy="120" cx="120" stroke-width="3" stroke="red" fill="none"/> 
+		</svg>
+
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <path id="path1" d="" stroke="#000" fill-opacity="0" />
+  </svg>
+	</div>
+
+
+	<script type="text/javascript">
+  function changeArcDeg(path, d){
+    path.setAttribute("d", d);
+  }
+  function drawArcByRadiusDeg(startX, startY, r, deg, clockwise) {
+    var cw = typeof clockwise !== 'undefined' ? clockwise : 1;
+    var x = startX - r + r*Math.cos(deg*Math.PI/180);
+    var y = startY + (1===cw ? 1 : -1)*r*Math.sin(deg*Math.PI/180);
+    var bigOrSmall = deg > 180 ? 1 : 0;
+    var line = " L" + (startX - r) + " " + startY + " L"+startX + " " + startY + "Z";
+    return "M " + startX +" "+ startY + " A "+ r +" " + r + " 0 " + bigOrSmall + " " +cw+ " " + x + " " + y;
+  }
+  function run(pid, deg, clockwise){
+    var path = document.getElementById(pid);
+    var x = 200, y = 100, r = 50, add = 0===deg ? true : false;
+    setInterval(function(){
+      if(deg>360) deg -= 360;
+      if(deg<0) deg += 360;
+      path.setAttribute("d", drawArcByRadiusDeg(x, y, r, add ? deg++ : deg--, clockwise)) ;
+    }, 10);
+  }
+  window.onload = function(){
+    // run('path1', 0, 1);
+    var path = document.getElementById('path1');
+    path.setAttribute("d", drawArcByRadiusDeg(200,100,50, 90, 1));
+  };
+</script>
+</body>
+</html>
