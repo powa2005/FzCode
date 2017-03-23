@@ -3,27 +3,54 @@
 <head>
 	<title>svg-progress</title>
 	<style type="text/css">
+  html,body{width: 100%;height: 100%;}
 		#progress { 
 			stroke-dasharray: 565.2px; 
 			stroke-dashoffset: 100px; 
 			transform: rotate(-90deg);
     		transform-origin: center;
 		}
+
+    .circle{
+      stroke-dasharray: 4px; 
+      stroke-dashoffset: 100px; 
+    }
 	</style>
 </head>
 
 <body>
-	<div>
-		<svg width="240" height="240" xmlns="http://www.w3.org/2000/svg">
+	<div style="padding:100px;width:100%;height:100%">
+		<!-- <svg width="240" height="240" xmlns="http://www.w3.org/2000/svg">
 			<circle id="backdrop" r="90" cy="120" cx="120" stroke-width="3" stroke="#333" fill="none"/> 
 			<circle id="progress" r="90" cy="120" cx="120" stroke-width="3" stroke="red" fill="none"/> 
 
 			<circle id="backdrop" r="90" cy="120" cx="120" stroke-width="3" stroke="#333" fill="none"/> 
 			<circle id="progress" r="90" cy="120" cx="120" stroke-width="3" stroke="red" fill="none"/> 
-		</svg>
+		</svg> -->
 
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <path id="path1" d="" stroke="#000" fill-opacity="0" />
+    <path class="circle" id="path1" d="M 200 100 A 50 50 0 0 0 100 100" stroke="#000" fill-opacity="0" />
+    <path class="" id="path2" d="M 200 100 A 50 50 0 0 0 100 100" stroke="#f00" fill-opacity="0" />
+    <path class="circle" id="path3" d="M 240 100 A 80 80 0 0 0 60 100" stroke="#000"  fill-opacity="0" />
+
+
+    <path class="" id="" d="M 200 160 A 50 50 0 0 0 100 160 C 100 100 200 200  200 120 " stroke="#f00" fill-opacity="0" />
+  </svg>
+  <svg xmlns="http:www.w3.org/2000/svg" width="240" height="400">
+<path d="M 0 0
+C153 334 151 334 151 334
+C151 339 153 344 156 344
+C164 344 171 339 171 334
+C171 322 164 314 156 314
+C142 314 131 322 131 334
+C131 350 142 364 156 364
+C175 364 191 350 191 334
+C191 311 175 294 156 294
+C131 294 111 311 111 334
+C111 361 131 384 156 384
+C186 384 211 361 211 334
+C211 300 186 274 156 274"
+style="fill:#f00;stroke:red;stroke-width:2"/>
   </svg>
 	</div>
 
@@ -34,25 +61,18 @@
   }
   function drawArcByRadiusDeg(startX, startY, r, deg, clockwise) {
     var cw = typeof clockwise !== 'undefined' ? clockwise : 1;
-    var x = startX - r + r*Math.cos(deg*Math.PI/180);
-    var y = startY + (1===cw ? 1 : -1)*r*Math.sin(deg*Math.PI/180);
+    deg = 180 - deg;
+    var x = startX + r + r*Math.cos(deg*Math.PI/180);
+    var y = startY - (1===cw ? 1 : -1)*r*Math.sin(deg*Math.PI/180);
     var bigOrSmall = deg > 180 ? 1 : 0;
     var line = " L" + (startX - r) + " " + startY + " L"+startX + " " + startY + "Z";
     return "M " + startX +" "+ startY + " A "+ r +" " + r + " 0 " + bigOrSmall + " " +cw+ " " + x + " " + y;
   }
-  function run(pid, deg, clockwise){
-    var path = document.getElementById(pid);
-    var x = 200, y = 100, r = 50, add = 0===deg ? true : false;
-    setInterval(function(){
-      if(deg>360) deg -= 360;
-      if(deg<0) deg += 360;
-      path.setAttribute("d", drawArcByRadiusDeg(x, y, r, add ? deg++ : deg--, clockwise)) ;
-    }, 10);
-  }
+ 
   window.onload = function(){
     // run('path1', 0, 1);
-    var path = document.getElementById('path1');
-    path.setAttribute("d", drawArcByRadiusDeg(200,100,50, 90, 1));
+    var path = document.getElementById('path2');
+    path.setAttribute("d", drawArcByRadiusDeg(100,100,50, 120, 1));
   };
 </script>
 </body>
