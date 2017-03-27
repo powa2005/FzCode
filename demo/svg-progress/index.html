@@ -17,31 +17,47 @@
 
 
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <ellipse id="path-11" cx="50" cy="50" rx="50" ry="50"></ellipse>
-        <linearGradient x1="0%" y1="100%" x2="100%" y2="27.2516694%" id="linearGradient-31"> <stop stop-color="#FFE3AF" offset="0%"></stop> <stop stop-color="#FF8C08" offset="100%"></stop> </linearGradient>
-        <g id="peak-pt">
-          <circle r="6" fill=""></circle>
-          <circle r="4" fill="#000"></circle>
-        </g>
-    </defs>
-    <g id="svg-content">
-    </g>
-  </svg>
- 
-  <br>
+      <defs>
+          <ellipse id="path-11" cx="50" cy="50" rx="50" ry="50"></ellipse>
+          <linearGradient x1="0%" y1="100%" x2="100%" y2="27.2516694%" id="linearGradient-31"> <stop stop-color="#FFE3AF" offset="0%"></stop> <stop stop-color="#FF8C08" offset="100%"></stop> </linearGradient>
+          <g id="peak-pt">
+            <circle r="6" fill=""></circle>
+            <circle r="4" fill="#000"></circle>
+          </g>
+      </defs>
+      <g id="svg-content">
+      </g>
 
-  <input id="input_p" type="text" />
+
+    </svg>
+    <br>
+    <input id="input_p" type="text" />
   <input type="button" value="set"  id="btn_set"/>
+    <br>
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="300">
+      <g id="pieGroup">
+      </g>
+    </svg>
+  <br>
+<input id="input_p2" type="text" />
+  <input type="button" value="set"  id="btn_set2"/>
+  
 </div>
 
 
 	<script type="text/javascript">
+  function createPie(id){
+      return '<g id="'+ id +'">'+
+      '<path class="pie-main" fill="url(#linearGradient-31)" fill-opacity="1" />'+
+      '<path class="circle" stroke="#fff" fill-opacity="0"  />'+
+      '</g>';
+  }
+
   function createProgress(id, r, startX, startY, endX, endY){
       return '<g id="'+ id +'">'+
       '<path class="circle" d="M '+ startX +' '+ startY +' A '+ r +' '+ r +' 0 0 0 '+ endX +' '+ endY +'" stroke="#fff" fill-opacity="0" />'+
       '<use xlink:href="#peak-pt" x="'+ startX +'" y="'+ startY +'" fill="#FF8C08" />'+
-      '<path class="path-pg" id="path3" stroke-width="12" stroke="url(#linearGradient-31)" fill-opacity="0" />'+
+      '<path class="path-pg" stroke-width="12" stroke="url(#linearGradient-31)" fill-opacity="0" />'+
       '<use xlink:href="#peak-pt" x="'+ endX +'" y="'+ endY +'" fill="#FFE3AF" />'+
       '<use class="end-point" xlink:href="#peak-pt" fill="#FF8C08" />'+
       '</g>';
@@ -56,27 +72,72 @@
     var x = startX + r + r*Math.cos(deg*Math.PI/180);
     var y = startY - (1===cw ? 1 : -1)*r*Math.sin(deg*Math.PI/180);
     var bigOrSmall = deg > 180 ? 1 : 0;
-
+    // var line = " L" + (startX - r) + " " + startY + " L"+startX + " " + startY + "Z";
     var d = "M " + startX +" "+ startY + " A "+ r +" " + r + " 0 " + bigOrSmall + " " +cw+ " " + x + " " + y;
 
     endPt.setAttribute("x", x);
     endPt.setAttribute("y", y);
     pathObj.setAttribute('d', d);
   }
- 
+  function setPie(id, startX, startY, r, deg, clockwise){
+    var pathObj = document.querySelector('#' + id + ' .pie-main');
+    var pathObj2 = document.querySelector('#' + id + ' .circle');
+
+    var cw = typeof clockwise !== 'undefined' ? clockwise : 1;
+    
+    var x = startX - r + r*Math.cos(deg*Math.PI/180);
+    var y = startY + (1===cw ? 1 : -1)*r*Math.sin(deg*Math.PI/180);
+    var bigOrSmall = deg > 180 ? 1 : 0;
+    var line = " L" + (startX - r) + " " + startY + " L" + startX + " " + startY + "Z";
+    var d = "M " + startX +" "+ startY + " A "+ r +" " + r + " 0 " + bigOrSmall + " " +cw+ " " + x + " " + y + " " + line;
+    pathObj.setAttribute('d', d);
+
+
+
+    var bigOrSmall2 = bigOrSmall == 0 ? 1 : 0;
+    var line2 = " L" + (startX - r) + " " + startY + " L" + startX + " " + startY + "Z";
+    var d2 = "M " + startX +" "+ startY + " A "+ r +" " + r + " 0 " + bigOrSmall2 + " " + 0 + " " + x + " " + y + " " + line2;
+
+    pathObj2.setAttribute('d', d2);
+
+    var smallDeg = deg / 2 + 180;
+    var startXSmall = startX - 70;
+    var xinX = startXSmall - 10 + 10*Math.cos(smallDeg*Math.PI/180);
+    var xinY = startY + (1===cw ? 1 : -1) * 10 * Math.sin(smallDeg*Math.PI/180);
+    
+    var xMinus = xinX - startX + r;
+    var yMinus = xinY - startY;
+    pathObj2.setAttribute('transform', 'translate('+xMinus+', '+yMinus+')');
+  }
+
+
   window.onload = function(){
     var path1 = createProgress('path1', 50, 200, 100, 100, 100);
     var path2 = createProgress('path2', 80, 240, 100, 60, 100);
     document.getElementById('svg-content').innerHTML = path1 + path2;
     setProgress('path1', 100,100,50, 100, 1)
     setProgress('path2', 60,100,90, 100, 1)
+    
     document.getElementById('btn_set').onclick = function(){
       var val = document.getElementById('input_p').value;
       setProgress('path1', 100,100,50, val, 1)
       setProgress('path2', 60,100,90, val, 1)
       
     }
+
+
+
+
+    document.getElementById('pieGroup').innerHTML = createPie('bodypie');
+    setPie('bodypie', 200,120,80, 309, 1);
+    document.getElementById('btn_set2').onclick = function(){
+      var val = document.getElementById('input_p2').value;
+      setPie('bodypie', 200,120,80, val, 1)
+      
+    }
   };
+
+
 </script>
 </body>
 </html>
