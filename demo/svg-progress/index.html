@@ -4,13 +4,7 @@
 	<title>svg-progress</title>
 	<style type="text/css">
   html,body{width: 100%;height: 100%;}
-		#progress { 
-			stroke-dasharray: 565.2px; 
-			stroke-dashoffset: 100px; 
-			transform: rotate(-90deg);
-    		transform-origin: center;
-		}
-
+		
     .circle{
       stroke-dasharray: 4px; 
       stroke-dashoffset: 100px; 
@@ -19,262 +13,68 @@
 </head>
 
 <body>
-	<div style="padding:100px;width:100%;height:100%">
-		<!-- <svg width="240" height="240" xmlns="http://www.w3.org/2000/svg">
-			<circle id="backdrop" r="90" cy="120" cx="120" stroke-width="3" stroke="#333" fill="none"/> 
-			<circle id="progress" r="90" cy="120" cx="120" stroke-width="3" stroke="red" fill="none"/> 
+	<div style="padding:100px;width:100%;height:100%;background:#333;">
 
-			<circle id="backdrop" r="90" cy="120" cx="120" stroke-width="3" stroke="#333" fill="none"/> 
-			<circle id="progress" r="90" cy="120" cx="120" stroke-width="3" stroke="red" fill="none"/> 
-		</svg> -->
 
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <ellipse id="path-11" cx="50" cy="50" rx="50" ry="50"></ellipse>
         <linearGradient x1="0%" y1="100%" x2="100%" y2="27.2516694%" id="linearGradient-31"> <stop stop-color="#FFE3AF" offset="0%"></stop> <stop stop-color="#FF8C08" offset="100%"></stop> </linearGradient>
+        <g id="peak-pt">
+          <circle r="6" fill=""></circle>
+          <circle r="4" fill="#000"></circle>
+        </g>
     </defs>
-    <path class="circle" id="path1" d="M 200 100 A 50 50 0 0 0 100 100" stroke="#000" fill-opacity="0" />
-    <circle id="start-pt1" cx="100" cy="100" r="6" fill="#FFE3AF"></circle>
-    <circle id="end-pt1" cx="100" cy="100" r="6" fill="#FF8C08"></circle>
-    <path class="" id="path2"  stroke-width="12" stroke="url(#linearGradient-31)" fill-opacity="0" />
-    <circle id="start-pt2" cx="100" cy="100" r="4" ></circle>
-    <circle id="end-pt2" cx="100" cy="100" r="4" ></circle>
-    <path class="circle" id="path3" d="M 240 100 A 80 80 0 0 0 60 100" stroke="#000"  fill-opacity="0" />
-
-
-    <path class="" id="" d="M 200 160 A 50 50 0 0 0 100 160 C 100 100 200 200  200 120 " stroke="#f00" fill-opacity="0" />
+    <g id="svg-content">
+    </g>
   </svg>
-  <svg width="206px" height="109px" viewBox="0 0 206 109" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
-    <title>Group</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <linearGradient x1="0%" y1="100%" x2="100%" y2="27.2516694%" id="linearGradient-1">
-            <stop stop-color="#FFE3AF" offset="0%"></stop>
-            <stop stop-color="#FF8C08" offset="100%"></stop>
-        </linearGradient>
-        <circle id="path-2" cx="6" cy="97" r="6"></circle>
-        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="12" height="12" fill="white">
-            <use xlink:href="#path-2"></use>
-        </mask>
-        <circle id="path-4" cx="200" cy="97" r="6"></circle>
-        <mask id="mask-5" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="12" height="12" fill="white">
-            <use xlink:href="#path-4"></use>
-        </mask>
-    </defs>
-    <g id="模型数据模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="身体成分报告" transform="translate(-129.000000, -276.000000)">
-            <g id="体重" transform="translate(111.000000, 201.000000)">
-                <g id="Group" transform="translate(18.000000, 81.000000)">
-                    <path d="M200,97 C200,43.4283793 156.571621,0 103,0 C49.4283793,0 6,43.4283793 6,97" id="Oval-4" stroke="url(#linearGradient-1)" stroke-width="12" stroke-linecap="round"></path>
-                    <use id="Oval-5-Copy-3" stroke="#FFE0A9" mask="url(#mask-3)" stroke-width="4" fill="#000000" xlink:href="#path-2"></use>
-                    <use id="Oval-5" stroke="#FF9418" mask="url(#mask-5)" stroke-width="4" fill="#000000" xlink:href="#path-4"></use>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
-<svg width="201px" height="104px" viewBox="0 0 201 104" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
-    <title>虚线</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <circle id="path-1" cx="194" cy="97" r="6"></circle>
-        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="12" height="12" fill="white">
-            <use xlink:href="#path-1"></use>
-        </mask>
-    </defs>
-    <g id="模型数据模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="身体数据（身体）有对比" transform="translate(-134.000000, -281.000000)">
-            <g id="体重" transform="translate(111.000000, 229.000000)">
-                <g id="体重/体脂" transform="translate(0.000000, 53.000000)">
-                    <g id="虚线" transform="translate(24.000000, 0.000000)">
-                        <path d="M194,97 C194,43.4283793 150.571621,0 97,0 C43.4283793,0 0,43.4283793 0,97" id="Oval-4" stroke="#979797" stroke-dasharray="2,2"></path>
-                        <use id="Oval-5" stroke="#F3A750" mask="url(#mask-2)" stroke-width="4" fill="#000000" xlink:href="#path-1"></use>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+ 
+  <br>
 
-<br>
-<svg width="104px" height="104px" viewBox="0 0 104 104" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
-    <title>新陈_SVG</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <ellipse id="path-11" cx="50" cy="50" rx="50" ry="50"></ellipse>
-        <linearGradient x1="0.684590242%" y1="49.3154098%" x2="99.3154098%" y2="49.3154098%" id="linearGradient-3">
-            <stop stop-color="#FACE5A" offset="0%"></stop>
-            <stop stop-color="#F76E1E" offset="100%"></stop>
-        </linearGradient>
-    </defs>
-    <g id="模型数据模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="身体数据（身体）有对比" transform="translate(-185.000000, -1346.000000)">
-            <g id="代谢率" transform="translate(127.000000, 1348.000000)">
-                <g transform="translate(46.000000, 0.000000)" id="新陈_SVG">
-                    <g transform="translate(14.000000, 0.000000)">
-                        <g id="渐变">
-                            <mask id="mask-22" fill="white">
-                                <use xlink:href="#path-11"></use>
-                            </mask>
-                            <use id="Mask" fill-opacity="0" fill="#D8D8D8" xlink:href="#path-11"></use>
-                            <path d="M5.24565123,70.1112332 C5.24565123,70.1112332 22.6144283,54.366721 37.3236401,65.3470068 C52.032852,76.3272926 58.8066538,76.1456361 65.4491803,74.6391642 C72.0917068,73.1326922 79.1834075,63.5723077 88.1910169,62.6966664 C97.1986263,61.8210252 99.0279644,62.5781639 99.0279644,62.5781639 L99.0279644,99.6322961 L5.24565123,99.6322961 L5.24565123,70.1112332 Z" id="Path-9" fill="url(#linearGradient-3)" mask="url(#mask-22)"></path>
-                        </g>
-                        <path d="M0,50 C0,77.6142375 22.3857625,100 50,100 L50,100 C77.6142375,100 100,77.6142375 100,50 C100,22.3857625 77.6142375,0 50,0 C34.8485779,0 21.2711956,6.73926566 12.1019172,17.383733" id="Oval-3" stroke="#F3A750" stroke-width="4"></path>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
-	
-
-
-
-
-
-
-
-
-
-
-<svg width="41px" height="81px" viewBox="0 0 41 81" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-    <title>Group 11</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <linearGradient x1="0%" y1="100%" x2="100%" y2="27.2516694%" id="linearGradient-1">
-            <stop stop-color="#FFE3AF" offset="0%"></stop>
-            <stop stop-color="#FF8C08" offset="100%"></stop>
-        </linearGradient>
-        <circle id="path-2" cx="6" cy="75" r="6"></circle>
-        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="12" height="12" fill="white">
-            <use xlink:href="#path-2"></use>
-        </mask>
-        <path d="M34.410831,12.4212342 C37.7245395,12.4212342 40.410831,9.73494274 40.410831,6.42123425 C40.410831,3.10752575 37.7245395,0.421234245 34.410831,0.421234245 C31.0971225,0.421234245 28.410831,3.10752575 28.410831,6.42123425 C28.410831,9.73494274 31.0971225,12.4212342 34.410831,12.4212342 Z" id="path-4"></path>
-        <mask id="mask-5" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="12" height="12" fill="white">
-            <use xlink:href="#path-4"></use>
-        </mask>
-    </defs>
-    <g id="模型数据模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group-11">
-            <path d="M34.3854871,6.43580654 C16.8467229,23.9873621 6,48.2269871 6,75" id="Oval-4-Copy-2" stroke="url(#linearGradient-1)" stroke-width="12" stroke-linecap="round"></path>
-            <use id="Oval-5-Copy-14" stroke="#FFE0A9" mask="url(#mask-3)" stroke-width="4" fill="#000000" xlink:href="#path-2"></use>
-            <use id="Oval-5-Copy-13" stroke="#FF9418" mask="url(#mask-5)" stroke-width="4" fill="#000000" xlink:href="#path-4"></use>
-        </g>
-    </g>
-</svg>
-
-
-
-
-
-
-
-<svg width="109px" height="109px" viewBox="0 0 109 109" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-    <title>Group 10</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <linearGradient x1="0%" y1="100%" x2="100%" y2="27.2516694%" id="linearGradient-1">
-            <stop stop-color="#FFE3AF" offset="0%"></stop>
-            <stop stop-color="#FF8C08" offset="100%"></stop>
-        </linearGradient>
-        <circle id="path-2" cx="6" cy="103" r="6"></circle>
-        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="12" height="12" fill="white">
-            <use xlink:href="#path-2"></use>
-        </mask>
-        <circle id="path-4" cx="103" cy="6" r="6"></circle>
-        <mask id="mask-5" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="12" height="12" fill="white">
-            <use xlink:href="#path-4"></use>
-        </mask>
-    </defs>
-    <g id="模型数据模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group-10">
-            <path d="M103,6 C76.2013922,6 51.9410183,16.8674717 34.3854871,34.4358065 C16.8467229,51.9873621 6,76.2269871 6,103" id="Oval-4-Copy" stroke="url(#linearGradient-1)" stroke-width="12" stroke-linecap="round"></path>
-            <use id="Oval-5-Copy-11" stroke="#FFE0A9" mask="url(#mask-3)" stroke-width="4" fill="#000000" xlink:href="#path-2"></use>
-            <use id="Oval-5-Copy-12" stroke="#FF9418" mask="url(#mask-5)" stroke-width="4" fill="#000000" xlink:href="#path-4"></use>
-        </g>
-    </g>
-</svg>
-
-
-
-
-
-
-<svg width="178px" height="109px" viewBox="0 0 178 109" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-    <title>Group 9</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <linearGradient x1="0%" y1="100%" x2="100%" y2="27.2516694%" id="linearGradient-1">
-            <stop stop-color="#FFE3AF" offset="0%"></stop>
-            <stop stop-color="#FF8C08" offset="100%"></stop>
-        </linearGradient>
-        <circle id="path-2" cx="6" cy="97" r="6"></circle>
-        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="12" height="12" fill="white">
-            <use xlink:href="#path-2"></use>
-        </mask>
-        <path d="M171.516779,34.3571342 C174.830487,34.3571342 177.516779,31.6708427 177.516779,28.3571342 C177.516779,25.0434257 174.830487,22.3571342 171.516779,22.3571342 C168.20307,22.3571342 165.516779,25.0434257 165.516779,28.3571342 C165.516779,31.6708427 168.20307,34.3571342 171.516779,34.3571342 Z" id="path-4"></path>
-        <mask id="mask-5" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="12" height="12" fill="white">
-            <use xlink:href="#path-4"></use>
-        </mask>
-    </defs>
-    <g id="模型数据模块" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group-9" transform="translate(0.000000, 6.000000)">
-            <path d="M171.527041,28.3483822 C153.97844,10.831426 129.754128,0 103,0 C76.2013922,0 51.9410183,10.8674717 34.3854871,28.4358065 C16.8467229,45.9873621 6,70.2269871 6,97" id="Oval-4" stroke="url(#linearGradient-1)" stroke-width="12" stroke-linecap="round"></path>
-            <use id="Oval-5-Copy-3" stroke="#FFE0A9" mask="url(#mask-3)" stroke-width="4" fill="#000000" xlink:href="#path-2"></use>
-            <use id="Oval-5" stroke="#FF9418" mask="url(#mask-5)" stroke-width="4" fill="#000000" xlink:href="#path-4"></use>
-        </g>
-    </g>
-</svg>
-
-
-
-
-
-
-<input id="input_p" type="text" />
-<input type="button" value="set"  id="btn_set"/>
+  <input id="input_p" type="text" />
+  <input type="button" value="set"  id="btn_set"/>
 </div>
 
 
-
-
-
 	<script type="text/javascript">
-  function changeArcDeg(path, d){
-    path.setAttribute("d", d);
+  function createProgress(id, r, startX, startY, endX, endY){
+      return '<g id="'+ id +'">'+
+      '<path class="circle" d="M '+ startX +' '+ startY +' A '+ r +' '+ r +' 0 0 0 '+ endX +' '+ endY +'" stroke="#fff" fill-opacity="0" />'+
+      '<use xlink:href="#peak-pt" x="'+ startX +'" y="'+ startY +'" fill="#FF8C08" />'+
+      '<path class="path-pg" id="path3" stroke-width="12" stroke="url(#linearGradient-31)" fill-opacity="0" />'+
+      '<use xlink:href="#peak-pt" x="'+ endX +'" y="'+ endY +'" fill="#FFE3AF" />'+
+      '<use class="end-point" xlink:href="#peak-pt" fill="#FF8C08" />'+
+      '</g>';
   }
-  function drawArcByRadiusDeg(startX, startY, r, deg, clockwise) {
+
+  function setProgress(id, startX, startY, r, deg, clockwise){
+    var pathObj = document.querySelector('#' + id + ' .path-pg');
+    var endPt = document.querySelector('#' + id + ' .end-point');
+
     var cw = typeof clockwise !== 'undefined' ? clockwise : 1;
     deg = 180 - deg;
     var x = startX + r + r*Math.cos(deg*Math.PI/180);
     var y = startY - (1===cw ? 1 : -1)*r*Math.sin(deg*Math.PI/180);
     var bigOrSmall = deg > 180 ? 1 : 0;
-    var line = " L" + (startX - r) + " " + startY + " L"+startX + " " + startY + "Z";
 
-    var end1 = document.getElementById('end-pt1');
-    var end2 = document.getElementById('end-pt2');
-    end1.setAttribute("cx", x);
-    end1.setAttribute("cy", y);
-    end2.setAttribute("cx", x);
-    end2.setAttribute("cy", y);
+    var d = "M " + startX +" "+ startY + " A "+ r +" " + r + " 0 " + bigOrSmall + " " +cw+ " " + x + " " + y;
 
-    return "M " + startX +" "+ startY + " A "+ r +" " + r + " 0 " + bigOrSmall + " " +cw+ " " + x + " " + y;
+    endPt.setAttribute("x", x);
+    endPt.setAttribute("y", y);
+    pathObj.setAttribute('d', d);
   }
  
   window.onload = function(){
-    // run('path1', 0, 1);
-    var path = document.getElementById('path2');
-    path.setAttribute("d", drawArcByRadiusDeg(100,100,50, 120, 1));
-
+    var path1 = createProgress('path1', 50, 200, 100, 100, 100);
+    var path2 = createProgress('path2', 80, 240, 100, 60, 100);
+    document.getElementById('svg-content').innerHTML = path1 + path2;
+    setProgress('path1', 100,100,50, 100, 1)
+    setProgress('path2', 60,100,90, 100, 1)
     document.getElementById('btn_set').onclick = function(){
       var val = document.getElementById('input_p').value;
-      path.setAttribute("d", drawArcByRadiusDeg(100,100,50, val, 1));
+      setProgress('path1', 100,100,50, val, 1)
+      setProgress('path2', 60,100,90, val, 1)
+      
     }
   };
 </script>
