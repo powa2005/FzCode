@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css3 倒计时</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		html,body{margin:0; padding: 0; height: 100%;width: 100%;}
+		@keyframes rotate{
+			0%{transform:rotate(0deg) ;}
+			100%{transform:rotate(360deg) ;}
+		}
+
+		@keyframes zoomout{
+			0%{opacity:1;transform:scale(0.9) ;}
+			100%{opacity:1;transform:scale(1.2) ;}
+		}
+		#contanier{height: 300px;position: relative;margin:40px;}
+		
+		.cutdown{width: 200px;height:200px;position: relative;}
+		.cutdown-bg{position: absolute;width: 100%;height: 100%;background: #f00;border-top:5px solid #000;border-radius: 100px;border-bottom: 5px solid orange;}
+		.cutdown-num{font-size: 80px;color: #fff;font-weight: bold;position: absolute;z-index: 1;line-height: 200px;text-align: center;width: 100%;}
+		.cutdown-bg.rotate{animation:rotate 1s linear none;}
+		.cutdown-num.zoomout{animation:zoomout 1s linear none;}
+	</style>
+</head>
+<body>
+
+	<div id="contanier">
+		<div class="cutdown">
+			<div class="cutdown-bg rotate"></div>
+			<span class="cutdown-num zoomout">3</span>
+		</div>
+	</div>
+
+	<script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			var $cutdownBg = $('.cutdown-bg');
+			var $cutdownNum = $('.cutdown-num');
+			var cutdown = 3;
+			$cutdownBg.on('animationend', function(){
+				$cutdownBg.removeClass('rotate');
+				$cutdownNum.removeClass('zoomout');
+				setTimeout(function(){
+					if(cutdown < 2) return;
+					cutdown --;
+					$cutdownNum.text(cutdown);
+					$cutdownBg.addClass('rotate');
+					$cutdownNum.addClass('zoomout');
+				})
+			});
+			
+
+		}
+
+	</script>
+</body>
+</html>
