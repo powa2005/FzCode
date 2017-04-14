@@ -4,15 +4,22 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>video demo</title>
+	<style type="text/css">
+		body,html{padding: 0;margin: 0;width: 100%;height: 100%;position: relative;}
+		.pop{position: absolute;top:0px;left:0px;height:50%;width: 50%;background-color: #ccc;z-index:2147483649!important; }
+	</style>
 </head>
 <body>
-	<video width="352" height="264" id="video" controls autobuffer>
-	    <source src="./demo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+	
+	<video width="352" height="264" id="video" controls autobuffer style="position:relative;">
+	    <source src="demo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+	    <div class="pop"></div>
 	</video>
-
 	<button class="btn" data-type="1">播放</button>
 	<button class="btn" data-type="2" >停止</button>
 	<button class="btn" data-type="3" >全屏</button>
+	<button class="btn" data-type="4" >10秒后退出</button>
+	<button class="btn" data-type="5" >弹窗</button>
 	
 	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript">
@@ -22,15 +29,14 @@
 
 			oVideo.on('playing',function(){
 				
-				setTimeout(function(){
-					// oVideo[0].pause();
-					// oVideo.remove();
+				// setTimeout(function(){
+				// 	oVideo[0].src = '';
 					
-					// launchFullscreen(oVideo[0]);
-				},1000)
+				// },5000)
 			})
 			oVideo.on('click',function(){
 				console.log('click');
+				//launchFullscreen(oVideo[0]);
 			})
 			$('.btn').click(function(){
 				var type = $(this).attr('data-type');
@@ -44,6 +50,16 @@
 					case '3':
 						console.log(1);
 						launchFullscreen(oVideo[0]);
+						$('.pop').show();
+						break;
+					case '4':
+						// setTimeout(function(){
+						// 	exitFullscreen();
+						// 	$('body').click();
+						// },60000)
+						break;
+					case '5':
+						$('.pop').show();
 						break;
 					default:
 

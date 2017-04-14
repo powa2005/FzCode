@@ -93,7 +93,13 @@
 			})
 		}
 		
-	
+		var arr = ['2016-09-08','2016-07-08','2016-09-09','2016-10-08'];
+		console.log(arr)
+		arr.sort(function(a,b){
+			var at = new Date(a), bt = new Date(b);
+			return at - bt;
+		})
+		console.log(arr)
 
 	</script>
 </body>

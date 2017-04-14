@@ -42,8 +42,9 @@
 		    
 		//     requestAnimationFrame(arguments.callee);
 		// });
-		var obj = document.querySelector('#scrollDiv ul');
-		function rander(){
+		
+		function commet_scroll(){
+			var obj = document.querySelector('#scrollDiv ul');
 			var animate = setInterval(function(){
 				var t = obj.style.marginTop.replace('px','');
 				if(t == -25){
@@ -53,14 +54,14 @@
 				    obj.removeChild(firstLi);
 				    obj.appendChild(firstLi);
 				    window.clearInterval(animate);
-				    setTimeout(rander,1500);
+				    setTimeout(commet_scroll,1500);
 				}
 				var val = parseInt(t) - 1
 			    obj.style.marginTop = val + 'px'; 
 			},25)
 			
 		}
-		rander();
+		commet_scroll();
 		//setInterval(rander,1000)
 	</script>
 </body>

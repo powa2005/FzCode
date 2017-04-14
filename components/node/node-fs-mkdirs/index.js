@@ -41,9 +41,8 @@ function mkdirs(path,cb){
 	}
 	curPath += relativePath + resp3[0] + '/';
 	if(!fs.existsSync(curPath)){
-		fs.mkdir(curPath,function(err,res){
-			createNodeDir(isFirst, p, cb);
-		})
+		fs.mkdirSync(curPath);
+		createNodeDir(isFirst, p, cb);
 	}else{
 		createNodeDir(isFirst, p, cb);
 	}
